@@ -15,6 +15,35 @@ USACE_NOTICE_URL = "https://www.nao.usace.army.mil/Media/Public-Notices/Article/
 VMRC_DOCKET_URL = "https://webapps.mrc.virginia.gov/public/habitat/additionaldocs.php?id=20260171"
 CHESTERFIELD_CIVICCLERK_URL = "https://chesterfieldcova.portal.civicclerk.com/"
 
+SUMMARY_PATHS = {
+    "docs/chesterfield/2025-06-25_Aeris_Investments_Fixed_Tax_Rate_Agreement.pdf": "summaries/aeris-tax-agreement.html",
+    "docs/chesterfield/2025-06-25_Chesterfield_BOS_Agenda_Packet.pdf": "summaries/chesterfield-bos-agenda-packet.html",
+    "docs/chesterfield/2025-08-27_Chesterfield_BOS_Minutes_Project_Loch_Google_Identity.pdf": "summaries/bos-minutes-google-identity.html",
+    "docs/chesterfield/2026-05-21_Chesterfield_EDA_Minutes_Google_Infrastructure_Grant.pdf": "summaries/chesterfield-eda-infrastructure-grant.html",
+    "docs/chesterfield/2026-05-27_Chesterfield_Presentation_Project_Loch_and_Skye_Google_Transactions.pdf": "summaries/chesterfield-presentation-google-transactions.html",
+    "docs/deq/2026-02-18_DEQ_Additional_Information_Request_1.pdf": "summaries/deq-additional-info-request-1.html",
+    "docs/deq/2026-03-31_DEQ_Additional_Information_Request_2.pdf": "summaries/deq-additional-info-request-2.html",
+    "docs/deq/2026-06-18_DEQ_Additional_Information_Request_4.pdf": "summaries/deq-additional-info-request-4.html",
+    "docs/deq/2026-07-08_DEQ_Request_to_Confirm_Wauford_SSWD_Withdrawal.pdf": "summaries/deq-request-confirm-withdrawal.html",
+    "docs/google/2026-01-29_Project_Loch_DoD_SAFE_Transmittal_and_Supporting_Files.pdf": "summaries/dod-safe-transmittal.html",
+    "docs/google/2026-01-29_Project_Loch_Environmental_Report_and_Technical_Appendices.pdf": "summaries/environmental-report.html",
+    "docs/google/2026-01-29_Project_Loch_Joint_Permit_Application_Package.pdf": "summaries/joint-permit-application.html",
+    "docs/google/2026-07-02_Google_Response_to_DEQ_Additional_Information_Request_4.pdf": "summaries/google-response-request-4.html",
+    "docs/google/2026-07-08_Google_Confirmation_of_Wauford_SSWD_Withdrawal.pdf": "summaries/google-confirmation-withdrawal.html",
+    "docs/usace/2026-05-13_USACE_NAO-2026-00182_Attachments.pdf": "summaries/usace-attachments.html",
+    "docs/vmrc/2026-04-29_VMRC_Non-Jurisdiction_Letter.pdf": "summaries/vmrc-non-jurisdiction-letter.html",
+    "docs/vmrc/VMRC_JPA-26-0171_Document_267375.pdf": "summaries/vmrc-docket-part-1.html",
+    "docs/vmrc/VMRC_JPA-26-0171_Document_267376.pdf": "summaries/vmrc-docket-part-2.html",
+    "docs/vmrc/VMRC_JPA-26-0171_Document_267377.pdf": "summaries/vmrc-docket-part-3.html",
+    "docs/vmrc/VMRC_JPA-26-0171_Document_268539.pdf": "summaries/vmrc-docket-deq-request-1.html",
+    "docs/vmrc/VMRC_JPA-26-0171_Document_273493.pdf": "summaries/vmrc-docket-deq-request-2.html",
+    "docs/vmrc/VMRC_JPA-26-0171_Document_278930.pdf": "summaries/vmrc-docket-non-jurisdiction.html",
+    "docs/vmrc/VMRC_JPA-26-0171_Document_285027.pdf": "summaries/vmrc-docket-deq-request-4.html",
+    "docs/vmrc/VMRC_JPA-26-0171_Document_286788.pdf": "summaries/vmrc-docket-applicant-response-4.html",
+    "docs/vmrc/VMRC_JPA-26-0171_Document_287616.pdf": "summaries/vmrc-docket-deq-confirmation-request.html",
+    "docs/vmrc/VMRC_JPA-26-0171_Document_287625.pdf": "summaries/vmrc-docket-applicant-confirmation-withdrawal.html",
+}
+
 
 MANUAL_METADATA = {
     "docs/chesterfield/2025-06-25_Aeris_Investments_Fixed_Tax_Rate_Agreement.pdf": {
@@ -408,6 +437,10 @@ def build_records() -> list[dict]:
         metadata = MANUAL_METADATA.get(relative_path)
         if metadata is None:
             raise KeyError(f"Missing manual metadata for {relative_path}")
+
+        summary_path = SUMMARY_PATHS.get(relative_path) or metadata.get("summary_path")
+        if summary_path:
+            metadata = {**metadata, "summary_path": summary_path}
 
         record = {
             **metadata,
