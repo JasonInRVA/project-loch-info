@@ -1,0 +1,3680 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<!-- Google Tag Manager for GA4 -->
+				<script>(function(w,d,s,l,i){w.GAMeasurementID='G-4E9LGLN85S';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');</script>
+				<!-- End Google Tag Manager for GA4 -->
+				<script type='text/javascript'>
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				</script>
+	<script>
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+		}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+			</script>
+			
+
+	<script type="text/javascript">
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= true;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script async src="https://docaccess.com/docbox.js"></script>
+	
+	
+	
+	<meta name="theme-color" content="#003e51">
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+		
+
+			<script src="/Assets/Scripts/jQuery/jquery-3.7.1.min.js"></script>
+	<script src="/Assets/Scripts/jQuery/jquery-migrate-3.5.2.min.js" type="text/javascript"></script>
+	
+
+	<!--[if IE 6]><script language="JavaScript" type="text/javascript"> var isie6 = true; </script><![endif]-->
+	<!--[if IE 7]><script language="JavaScript" type="text/javascript"> var isie7 = true; </script><![endif]-->
+	<!--[if IE 8]><script language="JavaScript" type="text/javascript"> var isie8 = true; </script><![endif]-->
+	<!--[if IE 9]><script language="JavaScript" type="text/javascript"> var isie8 = true; </script><![endif]-->
+	<script type="text/javascript"><!--
+	var intCountryCode = 840;
+	var order = '';
+//--></script>
+	
+<link href="/-681783051.css" rel="stylesheet" type="text/css">	<link href="/-1465647691.css" rel="stylesheet" type="text/css">	<link href="/-1166251290.css" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" type="text/css" href="/Assets/Styles/Print.css" media="print">
+	<script type="text/javascript">
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	</script>
+	<!--CPHeadContent-->
+	<script src="/739942322.js" type="text/javascript"></script>
+	
+	
+	
+
+    <title>Garrett Hart to Retire as Director of Chesterfield Economic Development &#x2022; Chesterfield County, VA</title>
+    <link rel="stylesheet" href="/static/NewsFlash/css/styles.css?v=LZG_PEQRmglVvV-SrzUpAMWBf-W-HnvwaaRMisV-7Ok" />
+
+
+        <link rel="canonical" href="http://www.chesterfield.gov/m/newsflash/Home/Detail/7228" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Garrett Hart to Retire as Director of Chesterfield Economic Development" />
+    <meta name="twitter:description" content="H. Garrett Hart III, a 20-year Chesterfield employee who has served as director of the county&#x2019;s Economic Development Department since 2015, has announced his retirement effective Jan. 1, 2027.Chesterf" />
+        <meta name="twitter:image" content="http://www.chesterfield.gov/ImageRepository/Document?documentID=47469" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Garrett Hart to Retire as Director of Chesterfield Economic Development" />
+    <meta property="og:description" content="H. Garrett Hart III, a 20-year Chesterfield employee who has served as director of the county&#x2019;s Economic Development Department since 2015, has announced his retirement effective Jan. 1, 2027.Chesterf" />
+        <meta property="og:image" content="http://www.chesterfield.gov/ImageRepository/Document?documentID=47469" />
+        <meta property="og:url" content="http://www.chesterfield.gov/m/newsflash/Home/Detail/7228" />
+
+	<!--This is cached layout-->
+
+
+	<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="/App_Themes/ie8.css"><![endif]-->
+	<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/App_Themes/ie7.css"><![endif]-->
+	<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="/App_Themes/ie6.css"><![endif]-->
+	<!--[if lt IE 9]><script type="text/javascript" src="/Scripts/html5.js"></script><![endif]-->
+
+	<script type="text/javascript">
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	</script>
+	<script src="/Assets/Scripts/AlpineJS/3.14.1/alpine.min.js" type="text/javascript" defer="defer"></script>
+</head>
+<body class="wide ">
+
+    <script>jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});</script>
+	<div id="popoverModal" class="cp-PopOver cp-PopOver--modal cp-AdminWrap" style="position: fixed; display: none;">
+	<div class="cp-PopOver-header">
+		<h3 class="cp-PopOver-title"></h3>
+		<button class="cp-Btn cp-PopOver-close" onclick="closePopOverModal(event)">
+			<svg class="cp-Icon--close" alt="close" title="close">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconClose"></use>
+			</svg>
+		</button>
+	</div>
+	<div id="cpPopOverBody" class="cp-PopOver-body">
+		<form id="cpPopOverForm" name="cpPopOverForm" novalidate></form>
+	</div>
+	<div id="cpPopOverFooter" class="cp-PopOver-footer">
+		<div class="cp-BtnGroup" id="actionButtons">
+			<!-- Action buttons will be dynamically added here -->
+		</div>
+	</div>
+</div>
+    <div id="fb-root"></div>
+<div id=skipToContentLinks>
+<a href="#contentarea" target="_self" class="skipToContentLink">Skip to Main Content</a>
+</div>
+    <form id="frmReferenceFormForTelerikEditorDialogs"></form>
+
+        <input type="hidden" id="GoogleMapsKey" value="AIzaSyDWUuE-ifkbhxblF920N8MjpBdTg1Wt784">
+
+
+
+    <input type="hidden" id="cpcDomain" value="https://cp-civicplusuniversity2.civicplus.com">
+    <input type="hidden" id="hdnStructureID" value="8">
+    <input type="hidden" id="hdnContentCollectionID" value="3c182709-3953-40ed-8654-00dfd988445f">
+    <input type="hidden" id="hdnWorkingCopyID" value="00000000-0000-0000-0000-000000000000">
+    <input type="hidden" id="hdnThemeID" value="97">
+    <input type="hidden" id="pageIsFrontEnd" value="true">
+    <input type="hidden" id="pageModuleID" value="1">
+    <input type="hidden" id="pagePageID">
+
+        <input type="hidden" id="hdnModuleID" value="1">
+    <div id="stickyPlaceholder"></div>
+    <div id="outer-wrap" class="outer-wrap">
+        <div id="inner-wrap" class="inner-wrap">
+                <div id="divToolbars" class="cpToolbars newCP mui-fixed" style="">
+                    
+
+
+
+                </div>
+            <div id="bodyWrapper">
+                <div id="mainNavHolderMobile" class="mainNavHolderMobile"></div>
+                
+<div data-cprole="structuralContainer" id="bodyContainerTS">
+<div data-cprole="banner" id="banner2" class="fixedBannerTS"><!-- Header Container --><header data-cprole="structuralContainer" id="headerContainerTS" class="fixedTopTS">
+<div data-cprole="structuralContainer" id="upperHeaderTS">
+<div class="siteWrap3"><div data-cprole="contentContainer" id="searchTS">	<div id="cc2dcd80f0-49cf-4285-99fb-24e768093437" data-containerid="2dcd80f0-49cf-4285-99fb-24e768093437" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="f8c89545-2572-402a-a0a3-b31a1f06bf8b">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col24 first last id5ba873de-8f1f-4e2a-ac5f-cc32e0e1c540" style="" data-widgetcontainerid="5ba873de-8f1f-4e2a-ac5f-cc32e0e1c540">	
+ 
+	<div data-widget-id='4375a1d7-1eee-4f23-99ca-8414f4baa9f1' data-modulename="customHtml" id='widgetCustomHtml4375a1d7-1eee-4f23-99ca-8414f4baa9f1' class="widget widgetCustomHtml skin147 narrow">
+	<div class="widgetBody pageStyles" id="widgetBody4375a1d7-1eee-4f23-99ca-8414f4baa9f1">
+		<div id="customHtml4375a1d7-1eee-4f23-99ca-8414f4baa9f1"><div><!-- BEGIN ALLNAV -->
+<link rel="stylesheet" type="text/css" href="https://customer.cludo.com/templates/10001467/cat_2024/dist/styles/cludo-search-results.css">
+<script>
+    window.cludo_engineId = 10002516;
+    window.cludo_language = "en";
+    window.cludo_searchUrl = "/Search"; //Search URL - change this to reflect the actual search URL
+</script>
+<script src="https://customer.cludo.com/scripts/bundles/search-script.min.js" type="text/javascript"></script>
+<script src="https://customer.cludo.com/templates/10001467/cat_2024/dist/js/cludo-search-results.js" type="text/javascript" onload=""></script>
+<script src="https://customer.cludo.com/scripts/bundles/assistant/1.0.1/support-assistant.js" type="text/javascript"></script>
+
+<style>
+div[data-modulename="customHtml"] #widgetPreviewSearch button.cludo-voice-icon {
+    display: none;
+    pointer-events: none;
+}
+
+div[data-modulename="customHtml"] #widgetPreviewSearch {
+	display: flex; 
+	margin: 2em;
+}
+
+div[data-modulename="customHtml"] #widgetPreviewSearch input[name="searchField"] {
+	flex-grow: 1;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+div[data-modulename="customHtml"] #widgetPreviewSearch button[title="Search"] {
+	border-top-left-radius: 0; 
+	border-bottom-left-radius: 0; 
+	border-top-right-radius: 4px; 
+	border-bottom-right-radius: 4px;
+}
+
+div[data-modulename="customHtml"] #widgetPreviewSearch button[title="Search"] + #search_autocomplete {
+	top: 60px;
+}
+
+div[data-modulename="customHtml"] #cludo-search-input {
+	width: 100% !important; 
+	margin: 0 !important; 
+	background: #A3D365 !important;
+}
+
+div[data-modulename="customHtml"] #cludo-search-input input[name="searchrequest"] {
+	padding-right: 0 !important;
+}
+</style>
+
+<div class="cludo-input-form" role="search" id="cludo-search-input">
+	<input class="cludo-input-form__input" title="Search the page" name="searchrequest" type="search" autocomplete="off" placeholder="Search..." aria-autocomplete="list" aria-haspopup="true">
+	<button type="submit" title="Search" class="cludo-input-form__search-button">
+		<span role="none" class="cp-search-submit"></span>
+	</button>
+</div>
+<!-- END ALLNAV --></div></div>
+	</div>
+	</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div><div data-cprole="contentContainer" id="linksTS">	<div id="cc7b75c5dc-54dc-40fd-9b12-a8852c2a340d" data-containerid="7b75c5dc-54dc-40fd-9b12-a8852c2a340d" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile" data-contentcontainerbreakpoint="10">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col18 first" style="" data-widgetcontainerid="a5527104-57af-441f-8a70-8816bb00d881">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col18 first last id104a65d8-9c23-4380-a991-d3bf09f50b30" style="" data-widgetcontainerid="104a65d8-9c23-4380-a991-d3bf09f50b30">	
+<div data-widget-id="43428f59-5e08-45cf-89fc-11cd335445d9" data-widget-controller-path="/GraphicLinks/Widget">
+
+
+
+
+<div id="graphicLinkWidget43428f59-5e08-45cf-89fc-11cd335445d9" class="widget widgetGraphicLinks skin153 widgetOptionSet102 wide" data-elementqueryclasses='{"wide-narrow":"min-width:1em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' data-modulewidgettype="graphicLinks">
+	<div class="widgetHeader">
+		<div class="">
+				</div>
+	</div>
+	<div class="widgetBody cpGrid cpGrid3 ">
+		<nav class="widgetGraphicLinksNav" aria-labelledby="GraphicLinkHeaderText">
+				<div class="row   wide">
+					<!--
+--><div class="col col1 first "><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/" target="_self" class="fancyButton fancyButton1518 ">
+		<span>
+			<span><span class="text">Home</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton1518.fancyButton:link,.fancyButton1518.fancyButton:visited, .fancyButton1518div.fancyButton{
+	padding-right: 15px;
+	padding-left: 30px;
+	background-image: url('/ImageRepository/Document?documentID=38496');
+	background-repeat: no-repeat;
+	background-position: left center;
+width: fit-content;
+margin: 0 auto;}
+.fancyButton1518.fancyButton:hover,.fancyButton1518.fancyButton:focus,.fancyButton1518.fancyButton:active,.fancyButton1518.fancyButton.hover{
+}
+.fancyButton1518.fancyButton:link > span,.fancyButton1518.fancyButton:visited > span, .fancyButton1518div.fancyButton > span{
+}
+.fancyButton1518.fancyButton:hover > span,.fancyButton1518.fancyButton:focus > span,.fancyButton1518.fancyButton:active > span,.fancyButton1518.fancyButton.hover > span{
+}
+.fancyButton1518.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: .9em;
+	font-family: "Montserrat";
+	font-weight: 600;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+height: 60px;
+line-height: 1;
+}
+.fancyButton1518.fancyButton:hover .text,.fancyButton1518.fancyButton:focus .text,.fancyButton1518.fancyButton:active .text,.fancyButton1518.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  "><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/notifyme" target="_self" class="fancyButton fancyButton1519 ">
+		<span>
+			<span><span class="text">Subscribe</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton1519.fancyButton:link,.fancyButton1519.fancyButton:visited, .fancyButton1519div.fancyButton{
+	padding-right: 15px;
+	padding-left: 30px;
+	background-image: url('/ImageRepository/Document?documentID=38498');
+	background-repeat: no-repeat;
+	background-position: left center;
+width: fit-content;
+margin: 0 auto;}
+.fancyButton1519.fancyButton:hover,.fancyButton1519.fancyButton:focus,.fancyButton1519.fancyButton:active,.fancyButton1519.fancyButton.hover{
+}
+.fancyButton1519.fancyButton:link > span,.fancyButton1519.fancyButton:visited > span, .fancyButton1519div.fancyButton > span{
+}
+.fancyButton1519.fancyButton:hover > span,.fancyButton1519.fancyButton:focus > span,.fancyButton1519.fancyButton:active > span,.fancyButton1519.fancyButton.hover > span{
+}
+.fancyButton1519.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: .9em;
+	font-family: "Montserrat";
+	font-weight: 600;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+height: 60px;
+line-height: 1;
+}
+.fancyButton1519.fancyButton:hover .text,.fancyButton1519.fancyButton:focus .text,.fancyButton1519.fancyButton:active .text,.fancyButton1519.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  last"><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/report" target="_self" class="fancyButton fancyButton1641 ">
+		<span>
+			<span><span class="text">Report</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton1641.fancyButton:link,.fancyButton1641.fancyButton:visited, .fancyButton1641div.fancyButton{
+	padding-right: 15px;
+	padding-left: 30px;
+	background-image: url(/ImageRepository/Document?documentID=38497);
+	background-repeat: no-repeat;
+	background-position: left center;
+width: fit-content;
+margin: 0 auto;}
+.fancyButton1641.fancyButton:hover,.fancyButton1641.fancyButton:focus,.fancyButton1641.fancyButton:active,.fancyButton1641.fancyButton.hover{
+}
+.fancyButton1641.fancyButton:link > span,.fancyButton1641.fancyButton:visited > span, .fancyButton1641div.fancyButton > span{
+}
+.fancyButton1641.fancyButton:hover > span,.fancyButton1641.fancyButton:focus > span,.fancyButton1641.fancyButton:active > span,.fancyButton1641.fancyButton.hover > span{
+}
+.fancyButton1641.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: .9em;
+	font-family: "Montserrat";
+	font-weight: 600;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+height: 60px;
+line-height: 1;
+}
+.fancyButton1641.fancyButton:hover .text,.fancyButton1641.fancyButton:focus .text,.fancyButton1641.fancyButton:active .text,.fancyButton1641.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!--				-->
+				</div>
+			</nav>
+		</div>
+	<div class="widgetFooter">
+			</div>
+</div>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col6 last" style="" data-widgetcontainerid="dd520fad-4c31-4b55-8da3-d3ca3844e2f3">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col6 first last idab198619-80c2-4629-b78e-19b023255988" style="" data-widgetcontainerid="ab198619-80c2-4629-b78e-19b023255988">	
+ 
+	<div data-widget-id='eff193ba-2d92-4677-a79d-227de23eb03f' data-modulename="customHtml" id='widgetCustomHtmleff193ba-2d92-4677-a79d-227de23eb03f' class="widget widgetCustomHtml skin153 narrow">
+	<div class="widgetBody pageStyles" id="widgetBodyeff193ba-2d92-4677-a79d-227de23eb03f">
+		<div id="customHtmleff193ba-2d92-4677-a79d-227de23eb03f"><div><div class="widgetItem GraphicLinks">
+
+<div>
+<a href="#" onclick="translatePage()" target="_self" class="fancyButton fancyButton1535 ">
+<span>
+<span><span class="text">Translate</span></span>
+</span>
+</a>
+</div>
+
+</div></div></div>
+	</div>
+	</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div>
+</div><div data-cprole="structuralContainer" id="lowerHeaderTS">
+<div class="siteWrap3"><div data-cprole="banner" id="bannerLogoTS" class="bannerLogoTS empty">
+
+
+
+
+				<a id="bannerLogoTS-357" style="			display: block; text-align: center;
+" class="bannerObject" href="/" target="_self"><img alt="Chesterfield County VA" class="bannerObject" height="41" src="/ImageRepository/Document?documentID=38541" width="385"></a>
+</div><nav data-cprole="nav" id="mainNav" class="siteNav mainNav" role="navigation">
+<ol id="mainNavMenu" data-parent="1" class="rootNavMenu" role="menu"><!--
+--><li id="MainItem27" class="topMenuItem" role="none" data-pageid="27" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role="menuitem" aria-haspopup=true aria-expanded='false' aria-controls="mainNavMegaMenu27" id="mainNavDepartments" class="navMainItem mainNavItem mainNavItem1 " href="/27/Departments" target="_self">   Departments  </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem31" class="topMenuItem" role="none" data-pageid="31" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role="menuitem" aria-haspopup=true aria-expanded='false' aria-controls="mainNavMegaMenu31" id="mainNavCommunity" class="navMainItem mainNavItem mainNavItem2 " href="/31/Community" target="_self">   Community  </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem35" class="topMenuItem" role="none" data-pageid="35" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role="menuitem" aria-haspopup=true aria-expanded='false' aria-controls="mainNavMegaMenu35" id="mainNavBusiness" class="navMainItem mainNavItem mainNavItem3 " href="/35/Business" target="_self">   Business  </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem101" class="topMenuItem" role="none" data-pageid="101" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role="menuitem" aria-haspopup=true aria-expanded='false' aria-controls="mainNavMegaMenu101" id="mainNavSupportServices" class="navMainItem mainNavItem mainNavItem4 " href="/1667/Assistance-Programs-and-Resources" target="_self">   Support Services  </a>			<!--
+			--><!--
+			--></li><!---->
+</ol>
+
+
+	<script type="text/javascript">
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=1&themeID=97&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = true;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	</script>
+
+
+<aside data-cprole="megaMenu" id="megaMenu" class="megaMenu" style="display: none;"><input type="hidden" id="megaMenuPopupDirection" value="0"><input type="hidden" id="megaMenuWidthReference" value="1"><aside role="menu" data-cprole="contentContainer" id="mainNavMegaMenu27" class="contentTop mainNavMegaMenu megaMenuContainer pageID_27 hidden" data-orientation="horizontal">	<div id="cc273f44aa-2dab-4555-9e8b-4ebb5d1018b0" data-containerid="273f44aa-2dab-4555-9e8b-4ebb5d1018b0" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cprole="contentContainer" id="mainNavMegaMenu31" class="contentTop mainNavMegaMenu megaMenuContainer pageID_31 hidden" data-orientation="horizontal">	<div id="cca2fbc2b1-ed14-4950-a1a1-c97246018b7d" data-containerid="a2fbc2b1-ed14-4950-a1a1-c97246018b7d" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cprole="contentContainer" id="mainNavMegaMenu35" class="contentTop mainNavMegaMenu megaMenuContainer pageID_35 hidden" data-orientation="horizontal">	<div id="cc29b6a239-52a7-41a2-b318-197f403cc5f9" data-containerid="29b6a239-52a7-41a2-b318-197f403cc5f9" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cprole="contentContainer" id="mainNavMegaMenu101" class="contentTop mainNavMegaMenu megaMenuContainer pageID_101 hidden" data-orientation="horizontal">	<div id="cc3c9c13ba-c95d-4cdf-98c6-56a64824dd42" data-containerid="3c9c13ba-c95d-4cdf-98c6-56a64824dd42" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside></aside></nav></div>
+</div>
+</header><!-- Banner --><div data-cprole="structuralContainer" id="bannerContainerTS" class="noOverflowTS">
+<div data-cprole="banner" id="banner1"><div data-cprole="structuralContainer" id="bannerSizingTS">
+<div data-cprole="structuralContainer" id="bannerContentTS">
+<div class="siteWrap3"><div data-cprole="contentContainer" id="alertsTS">	<div id="cc10924e15-e064-46d5-b2c8-ef9b4b7f7a57" data-containerid="10924e15-e064-46d5-b2c8-ef9b4b7f7a57" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</div></div><div class="siteWrap"><div data-cprole="contentContainer" id="contentTS">	<div id="ccbbb8719e-559f-4ca1-b81e-1353d8283818" data-containerid="bbb8719e-559f-4ca1-b81e-1353d8283818" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="0e908994-b4f3-42dd-add6-15934395f8a4">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col24 first last id2e3c8639-bc61-428d-a529-7d408c40474d" style="" data-widgetcontainerid="2e3c8639-bc61-428d-a529-7d408c40474d">	
+ 
+	<div data-widget-id='393a444a-f027-4813-bc3e-7693ce41694e' data-modulename="customHtml" id='widgetCustomHtml393a444a-f027-4813-bc3e-7693ce41694e' class="widget widgetCustomHtml skin169 narrow">
+	<div class="widgetBody pageStyles" id="widgetBody393a444a-f027-4813-bc3e-7693ce41694e">
+		<div id="customHtml393a444a-f027-4813-bc3e-7693ce41694e"><div><style>
+#contentTS {background-color:rgb(0,0,0,0.0)!important;
+box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0)!important;
+max-width: 100%!important;margin-top:0em!important;
+margin-bottom:2em!important;
+padding-top:4em!important;
+padding-bottom:0em!important;}
+ 
+#alertsTS{min-height:0px!important;}
+ 
+#mainWrapTS{border-radius: 15px 15px 0 0!important;}
+ 
+.secondaryNav{15px 0px 0px 0px!important;}
+ 
+.moduleContentNew .single .item>h3 {line-height: 1;}
+ 
+.moduleContentNew h3, .moduleContentNew h3 a, .moduleContentNew h3 a:link, .moduleContentNew h3 a:visited, .moduleContentNew h3 a:hover, .moduleContentNew h3 a:focus, .moduleContentNew h3 a:active .moduleContentNew .h3, .widget.image.pageStyles .widgetHeader h3{line-height: 1;padding-top:18px;}
+ 
+.moduleContentNew .others h2 {font-size: 1.6em;line-height:1;padding-bottom:10px;margin-bottom:10px;}
+ 
+.moduleContentNew .item .date{font-size: 0.7em!important;font-weight:600;font-family: 'Montserrat';text-transform: uppercase;color:#aaa!important;}
+ 
+.moduleContentNew .single>h2 {padding-bottom:5px!important;}
+ 
+.moduleContentNew .others .listing .thumb img{width: 120px!important;height: 120px !important;object-fit: cover;border-radius: 0 15px 0 15px;}
+ 
+.moduleContentNew .others .listing .alignRight{float:left!important;margin:0px!important;}
+ 
+.moduleContentNew .others .listing .thumb{padding: 0px 15px 0px 0px!important;}
+ 
+#siteSidebarTS{border-radius:15px 0 0 0;}
+ 
+.moduleContentNew .userAccount, .moduleContentNew table.header td, .moduleContentNew .sidebar, .moduleContentNew .footer{display:none!important;}
+
+
+ table, td, th, tr {
+    border: none !important;
+  }
+
+table {
+  background-color: #fff !important;
+}
+
+img {cursor: default !important;}
+</style>
+</div></div>
+	</div>
+	</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div>
+</div>
+</div>
+
+
+
+
+		<div id="banner1-356" style="display: none"></div>
+			<script type="text/javascript">
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderBanner('banner1-356',
+								'banner1',
+								{"BannerOptionID":356,"ThemeID":97,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":1,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":780,"BannerOptionID":356,"FileName":"/ImageRepository/Document?documentID=38557","Height":1333,"Width":2000,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135578800000)\/","AltText":null}],"BannerVideos":[],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135578800000)\/"},
+								{"BannerImageID":780,"BannerOptionID":356,"FileName":"/ImageRepository/Document?documentID=38557","Height":1333,"Width":2000,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135578800000)\/","AltText":null},
+								'/App_Themes/Interior/Images/',
+								'<img alt="" class="bannerObject" src="/ImageRepository/Document?documentID=38557" />');
+						});
+				});
+			</script>
+
+</div>
+</div><!-- Content container --><div data-cprole="structuralContainer" id="mainContainerTS">
+<div class="siteWrap"><div data-cprole="structuralContainer" id="mainWrapTS" class="mainWrap" role="main">
+<div data-cprole="structuralContainer" id="outerContentWrapTS" class="outerContentWrap">
+<div data-cprole="structuralContainer" id="contentWrapTS" class="contentWrap">
+<div data-cprole="breadCrumbs" id="breadCrumbs" class="breadCrumbContainer"><script type='text/javascript'>$('#breadCrumbs').hide();</script></div><div data-cprole="mainContentContainer" id="moduleContent">
+	
+
+    <div id="outer-wrapper" class="redesign-container" aria-live="polite" hx-on::after-settle="autoFocus()">
+        
+
+<div id="contentarea" class="pageStyles content shadow grid container p-0 rounded-top border">
+    <main role="main" id="main-wrapper">
+        <style scoped>
+            * {
+                --categoryColor: var(--cp-module-style-color6);
+            }
+        </style>
+        <h1 class="visually-hidden">News Flash</h1>
+        <!-- Article Header -->
+        <div data-autofocus="true">
+            <div class="article-header article-header-image-background bg-dark text-white m-0">
+        <div class="ps-0 col article-header-image">
+            <img alt="" src="/ImageRepository/Document?documentID=47469" class="rounded mw-100 mh-100" style="object-position: 50% 50%" />
+        </div>
+    <div class="article-header-content px-0 col-11 col-md-10 mx-auto py-md-5 py-4 ">
+        <h1 class="fs-1 article-header-title mb-3">
+            Garrett Hart to Retire as Director of Chesterfield Economic Development
+        </h1>
+        <div class="article-header-footer d-flex flex-wrap gap-1 align-items-center articles-category">
+            <span id="article-header-tag"
+                  class="article-badge badge rounded-pill text-border-primary fw-semibold text-truncate me-2 ">
+                Chesterfield on Point
+            </span>
+            <span id="article-header-date" class="fst-italic opacity-75">
+                Posted on April 29, 2026 
+            </span>
+        </div>
+    </div>
+</div>
+        </div>
+
+        <div class="my-4 col-11 m-auto">
+            <!-- Article Content -->
+            <div class="article-content redesign-text fr-view">
+    <p><img src="https://www.chesterfield.gov/ImageRepository/Document?documentId=47465" class="fr-fil fr-dib" alt="Chesterfield Economic Development Director Garrett Hart at Springline at District 60 "></p><p data-pasted="true">H. Garrett Hart III, a 20-year Chesterfield employee who has served as director of the county’s Economic Development Department since 2015, has announced his retirement effective Jan. 1, 2027.</p><p>Chesterfield has experienced significant economic growth during Hart’s tenure as director, attracting companies such as LEGO, Google, Niagara, and most recently, Commonwealth Fusion Systems. These projects and many others represent more than $12 billion of capital investment and 10,000 new jobs, expanding the local economy and diversifying the county’s commercial tax base.</p><p>“It has been a great honor to be part of Team Chesterfield for the past two decades, working alongside the finest group of elected and appointed officials and local government employees to serve the citizens and businesses that call Chesterfield home,” Hart said. “I’m exceedingly proud of what we’ve accomplished in taking the county to the next level as an exceptional place to live, learn, work and play.”</p><p>Hart’s fingerprints are on every major economic development success Chesterfield has achieved since he began working for the county in 2006, helping transform a suburban bedroom community into the Richmond region’s leader in job creation.</p><p>Sabra Dipping Company opened a state-of-the-art facility in Chesterfield in May 2010. It has since undergone multiple expansions, becoming the world's largest hummus-making plant.</p><p>The following year, Amazon opened its 1 million-square-foot fulfillment center in the county’s Meadowville Technology Park.&nbsp;</p><p>In March 2017, Niagara began production of bottled water at its 557,000-square-foot facility at Meadowville.</p><p>The LEGO Group announced plans in June 2022 to construct a 1.7 million-square-foot precision manufacturing facility at Meadowville. The project, which is under construction, represents $1 billion in capital investment and will create 1,761 jobs.</p><p><img src="https://www.chesterfield.gov/ImageRepository/Document?documentId=47466" class="fr-fil fr-dib" alt="Garrett Hart signs a steal beam at the topping-out ceremony for LEGO's Chesterfield plant"></p><p>"Garrett has a rare ability to connect the right ideas with the right people,” said Carolina Giuga, senior director of Government &amp; Public Affairs, Americas at The LEGO Group. “From day one, his leadership made our decision to invest in Virginia easy and the journey both smooth and rewarding, fitting together perfectly, like two LEGO bricks."</p><p>Commonwealth Fusion Systems announced in December 2024 its plan to build the world’s first grid-scale commercial fusion power plant in Chesterfield. The project is expected to cost more than $2.5 billion.</p><p>Then last August, Google announced it is building a data center campus in Chesterfield as the anchor of a $9 billion investment to expand its cloud and AI infrastructure in Virginia. The company, which is poised to become the county’s largest single taxpayer, has also acquired two other sites in Chesterfield for future data center development.</p><p>“Landing major projects like these takes months, if not years, of relationship building and diligent, determined work behind the scenes. Through their tireless efforts, Garrett and his team have put Chesterfield on the map nationally and internationally as a business-friendly destination,” said Dr. Mark Miller, chair of the Board of Supervisors (Midlothian District). “On behalf of the entire board, I offer sincere thanks for a job well done and wishes for a long, fulfilling retirement.”&nbsp;</p><p>Under Hart’s leadership of Chesterfield Economic Development, businesses large and small have flourished across the county. From July 2015 to July 2025, the number of businesses operating in Chesterfield increased by 21.7%, the number of jobs increased by 11.9% and average weekly wage increased by 44.4%.</p><p>Over the same 10-year period, Chesterfield’s unemployment rate fell by nearly a full point. &nbsp; &nbsp; &nbsp;</p><p>“In economic development, I imagine it can be easy to focus your energy and efforts on attracting new business and to overlook the existing businesses in the region. We have never felt that way in Chesterfield,” said Matt Holland, executive vice president of Super Radiator Coils, which operates two manufacturing facilities in the county. “We have felt support, flexibility and responsiveness from Chesterfield County in planning, permitting and workforce development. That has been especially true in the last 10 years while Garrett Hart has served as director. In that time, we have grown from less than 200 employees to approaching 600 full-time team members today. As our business grows, we have choices of where to invest and we continue to invest in Chesterfield.”</p><p>Chesterfield is well positioned to continue attracting new investment with its acquisition of the Upper Magnolia Green and Spring Rock Green properties.</p><p><img src="https://www.chesterfield.gov/ImageRepository/Document?documentId=47468" class="fr-fil fr-dib" alt="Garrett Hart presents an economic development update at the 2025 State of the County event"></p><p>About 1,700 acres on the western side of the Upper Magnolia Green site has been rezoned for development as a technology village. It is the most progressed economic development site in Virginia that has more than 1,000 acres of contiguous developable land and is located in a metro area of more than 1 million people.&nbsp;</p><p>The underutilized former Spring Rock Green shopping center is being redeveloped and rebranded as Springline at District 60, with zoning for 1,200 residential units, 300,000 square feet of office space, 120,000 square feet of retail and two hotels. The first office and mixed-use buildings are now open, while Shamin Hotels is under construction with a $160 million upscale hotel and conference center known as Hilton Richmond The Mondelle.&nbsp;</p><p>Hart also negotiated Chesterfield’s purchase of River City Sportsplex, which benefits both the county and region by attracting thousands of visitors annually for sports tournaments.&nbsp;</p><p>“Having worked closely with Garrett for the past decade, I know how deeply he cares about leaving Chesterfield better than he found it,” said Dr. Joe Casey, county administrator. “As he heads into a well-deserved retirement, the positive ripple effects from his service will continue to benefit our residents and business community for generations.” &nbsp;</p><p>A Virginia Tech graduate, Hart is a founding member, current president and past board member of the Virginia Economic Developers Association (VEDA), as well as past chairman, board member and honorary life member of the Southern Economic Development Council. He received the designation of Certified Economic and Community Developer from the International Economic Development Council.</p><p>Hart, a 2026 Virginia Business C-Suite Awards honoree, has been listed in the Virginia Business 500 Power List every year since its inception. He also received VEDA’s Cardinal Award, the association’s most prestigious honor recognizing leadership in economic development, outstanding professional accomplishments and exceptional service, in 2024.</p><p>“Garrett Hart is one of the most distinguished and impactful economic developer leaders, not just in Virginia but across the entire country. He embodies the best in a true team sport, and his partnership has been a significant factor in Virginia’s economic development success,”&nbsp;said Jason El Koubi, president and CEO of the Virginia Economic Development Partnership. "Garrett has a gift for building strong&nbsp;relationships, and he has been exceptionally generous with his time, insight, and mentorship in giving back to this profession. We are all better because of his leadership and service, and I join many others in celebrating Garrett’s contributions and impact on this milestone announcement.”</p><p>A nationwide recruitment will be conducted to identify Hart’s successor.</p><p><img src="https://www.chesterfield.gov/ImageRepository/Document?documentId=47467" class="fr-fil fr-dib" alt="Garrett Hart receives the 2024 Cardinal Award from the Virginia Economic Developers Association"></p>
+</div>
+
+
+
+            <hr class="my-4"/>
+
+            <!-- Article Footer / Related News -->
+            
+	<div class="article-footer articles-category">
+		<h2 id="related-articles-header" class="mb-0 fs-4">Related News</h2>
+		<ul aria-labelledby="related-articles-header" id="list-related-category-177" class="list-group list-group-flush ps-0">
+				<li class="list-group-item px-0 py-3 mx-2 bg-transparent">
+					<div class="border-article article-link ps-2">
+						<div>
+							<h3 class="fs-6 title-truncate title-truncate-2">
+									<a href="/m/newsflash/Home/Detail/7389" class="article-title-link"
+									   hx-get="/m/newsflash/Home/Detail/7389"
+									   hx-trigger="click"
+									   hx-target="#outer-wrapper"
+									   hx-swap="innerHTML show:window:top"
+									   hx-push-url="true"
+									   aria-label="Open Article Momentum Building as Work Continues on Fall Line Trail&#x27;s Chesterfield Sections">
+										Momentum Building as Work Continues on Fall Line Trail&#x27;s Chesterfield Sections
+									</a>
+							</h3>
+						</div>
+						<div class="related-footer d-flex flex-wrap gap-2 align-items-center">
+							<span class="article-badge text-truncate badge rounded-pill text-dark text-border-primary fw-semibold">
+								Chesterfield on Point
+							</span>
+
+							<span class="fst-italic text-body-secondary">
+								Posted on July 09, 2026 
+							</span>
+						</div>
+					</div>
+				</li>
+				<li class="list-group-item px-0 py-3 mx-2 bg-transparent">
+					<div class="border-article article-link ps-2">
+						<div>
+							<h3 class="fs-6 title-truncate title-truncate-2">
+									<a href="/m/newsflash/Home/Detail/7387" class="article-title-link"
+									   hx-get="/m/newsflash/Home/Detail/7387"
+									   hx-trigger="click"
+									   hx-target="#outer-wrapper"
+									   hx-swap="innerHTML show:window:top"
+									   hx-push-url="true"
+									   aria-label="Open Article Everyday Q&amp;A: Hitting Innovation Out of the Park with Matt Mullen">
+										Everyday Q&amp;A: Hitting Innovation Out of the Park with Matt Mullen
+									</a>
+							</h3>
+						</div>
+						<div class="related-footer d-flex flex-wrap gap-2 align-items-center">
+							<span class="article-badge text-truncate badge rounded-pill text-dark text-border-primary fw-semibold">
+								Chesterfield on Point
+							</span>
+
+							<span class="fst-italic text-body-secondary">
+								Posted on July 08, 2026 
+							</span>
+						</div>
+					</div>
+				</li>
+				<li class="list-group-item px-0 py-3 mx-2 bg-transparent">
+					<div class="border-article article-link ps-2">
+						<div>
+							<h3 class="fs-6 title-truncate title-truncate-2">
+									<a href="/m/newsflash/Home/Detail/7384" class="article-title-link"
+									   hx-get="/m/newsflash/Home/Detail/7384"
+									   hx-trigger="click"
+									   hx-target="#outer-wrapper"
+									   hx-swap="innerHTML show:window:top"
+									   hx-push-url="true"
+									   aria-label="Open Article Soldier, Model, Volunteer: David Lipp&#x2019;s Storied Life Through Community Service">
+										Soldier, Model, Volunteer: David Lipp&#x2019;s Storied Life Through Community Service
+									</a>
+							</h3>
+						</div>
+						<div class="related-footer d-flex flex-wrap gap-2 align-items-center">
+							<span class="article-badge text-truncate badge rounded-pill text-dark text-border-primary fw-semibold">
+								Chesterfield on Point
+							</span>
+
+							<span class="fst-italic text-body-secondary">
+								Posted on July 07, 2026 
+							</span>
+						</div>
+					</div>
+				</li>
+				<li class="list-group-item px-0 py-3 mx-2 bg-transparent">
+					<div class="border-article article-link ps-2">
+						<div>
+							<h3 class="fs-6 title-truncate title-truncate-2">
+									<a href="/m/newsflash/Home/Detail/7334" class="article-title-link"
+									   hx-get="/m/newsflash/Home/Detail/7334"
+									   hx-trigger="click"
+									   hx-target="#outer-wrapper"
+									   hx-swap="innerHTML show:window:top"
+									   hx-push-url="true"
+									   aria-label="Open Article Chesterfield Marks Milestone in Construction of New West Ridge High School">
+										Chesterfield Marks Milestone in Construction of New West Ridge High School
+									</a>
+							</h3>
+						</div>
+						<div class="related-footer d-flex flex-wrap gap-2 align-items-center">
+							<span class="article-badge text-truncate badge rounded-pill text-dark text-border-primary fw-semibold">
+								Chesterfield on Point
+							</span>
+
+							<span class="fst-italic text-body-secondary">
+								Posted on June 16, 2026 
+							</span>
+						</div>
+					</div>
+				</li>
+				<li class="list-group-item px-0 py-3 mx-2 bg-transparent">
+					<div class="border-article article-link ps-2">
+						<div>
+							<h3 class="fs-6 title-truncate title-truncate-2">
+									<a href="/m/newsflash/Home/Detail/7379" class="article-title-link"
+									   hx-get="/m/newsflash/Home/Detail/7379"
+									   hx-trigger="click"
+									   hx-target="#outer-wrapper"
+									   hx-swap="innerHTML show:window:top"
+									   hx-push-url="true"
+									   aria-label="Open Article Brick by Brick: 250 Years of American Independence in Chesterfield">
+										Brick by Brick: 250 Years of American Independence in Chesterfield
+									</a>
+							</h3>
+						</div>
+						<div class="related-footer d-flex flex-wrap gap-2 align-items-center">
+							<span class="article-badge text-truncate badge rounded-pill text-dark text-border-primary fw-semibold">
+								Chesterfield on Point
+							</span>
+
+							<span class="fst-italic text-body-secondary">
+								Posted on July 01, 2026 
+							</span>
+						</div>
+					</div>
+				</li>
+		</ul>
+	</div>
+
+        </div>
+    </main>
+</div>
+    </div>
+    <script src="/static/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/static/NewsFlash/js/site.js?v=Byjg9eNE5pZ8_IqkDrBTa1Cdj-mNq07sbLd5PNqhS3U"></script>
+    <script src="/static/NewsFlash/js/KAM.js?v=E0BiVHIOBwyDThbgvx1arMXoubv75Ye35banrzogVmg"></script>
+    <script src="/static/js/common.js?v=FuozqJCc28HHQBoqiwY07DKZfrItsPDfOYoI5RNRnxY"></script>
+    <script src="/static/js/loader.js?v=i215fmhn1ppNi3l5y5xz6tGyeuBsqLV8coS6Mfb4FrU"></script>
+    
+
+</div>
+</div><aside data-cprole="contentContainer" id="featureColumn" class="secondaryContent">	<div id="cc34f61ccc-df0c-4014-abbd-13150aa8ed41" data-containerid="34f61ccc-df0c-4014-abbd-13150aa8ed41" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside>
+</div><div data-cprole="structuralContainer" id="siteSidebarTS" class="siteSidebar">
+<aside data-cprole="contentContainer" id="sidebarContainer1TS">	<div id="cca37522be-2705-47ca-9bc3-5e908943d30b" data-containerid="a37522be-2705-47ca-9bc3-5e908943d30b" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><nav data-cprole="nav" id="secondaryNav" class="siteNav secondaryNav">
+
+
+
+
+
+	<ol role="menu" id="secondaryMenusecondaryNav" data-parent="3856" class="rootNavMenu accordionNav">
+	<li class="topMenuItem sideNavLi hasAccordionChildren" id="SideItem5483" data-pageid="5483">
+		<div class="accordionNavItem">
+			<a href="/5483/Chesterfield-Behind-the-Mic-Podcast" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">Chesterfield Behind the Mic Podcast</a>
+		</div>
+			</li>
+	<li class="topMenuItem sideNavLi hasAccordionChildren" id="SideItem5549" data-pageid="5549">
+		<div class="accordionNavItem">
+			<a href="/5549/Chesterfield-Kindness" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">Chesterfield Kindness</a>
+		</div>
+			</li>
+	<li class="topMenuItem sideNavLi hasAccordionChildren" id="SideItem5539" data-pageid="5539">
+		<div class="accordionNavItem">
+			<a href="/5539/Chesterfield-on-Point-Blog" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">Chesterfield on Point Blog</a>
+		</div>
+			</li>
+	<li class="topMenuItem sideNavLi hasAccordionChildren" id="SideItem1163" data-pageid="1163">
+		<div class="accordionNavItem">
+			<a href="/1163/County-Social-Media-Accounts-and-Comment" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">County Social Media Accounts and Comments Policy</a>
+		</div>
+			</li>
+	<li class="topMenuItem sideNavLi hasAccordionChildren" id="SideItem1653" data-pageid="1653">
+		<div class="accordionNavItem">
+			<a href="/1653/Happening-In-Chesterfield-and-County-New" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">Happening In Chesterfield and County Newsletters</a>
+		</div>
+			</li>
+	<li class="topMenuItem sideNavLi hasAccordionChildren" id="SideItem1160" data-pageid="1160">
+		<div class="accordionNavItem">
+			<a href="/1160/WCCT-Chesterfield-Community-Television" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">WCCT Chesterfield Community Television</a>
+		</div>
+			</li>
+
+	</ol>
+
+
+	<script type="text/javascript">
+		(function () {
+			function setupSecondaryMenuProperties() {
+				//setup menu manager properties for secondary menu
+				menuManager.isSideMenuEditable = false;
+				menuManager.sideMenuMaxSubMenuLevels = 4;
+				menuManager.sideMenuHasCustomLinks = false;
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupSecondaryMenuProperties, { once: true });
+				return;
+			}
+
+			setupSecondaryMenuProperties();
+		})();
+	</script>
+
+	<script type="text/javascript">
+		(function () {
+			function setupAccordionSecondaryNav() {
+				var $menuContainer = $('#secondaryNav');
+
+				$menuContainer.find('*[id^="SideItem"]').each(function () {
+					var ids = $('[id="' + this.id + '"]');
+					if (ids.length > 1)
+						$.each(ids, function (index, value) {
+							value.id = value.id + '_' + index;
+						});
+				});
+
+				$menuContainer.find('.hasAccordionChildren .openAccordionNav').off('click.secondaryNav').on('click.secondaryNav', function (e) {
+					e.preventDefault();
+					showHideAccordionMenuForSecondaryNav($(this));
+				});
+
+				$menuContainer.find(".grippy").each(function () {
+					menuManager.setupDraggableElement($(this), SIDE_MENU, '#secondaryNav');
+				});
+
+				$menuContainer.find("li").each(function () {
+					menuManager.setupDroppableAccordionElement($(this), SIDE_MENU);
+				});
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupAccordionSecondaryNav, { once: true });
+				return;
+			}
+
+			setupAccordionSecondaryNav();
+		})();
+	</script>
+
+
+
+</nav><aside data-cprole="contentContainer" id="sidebarContainer2TS">	<div id="cc6210181b-e245-4ba6-af8a-ae670905c14c" data-containerid="6210181b-e245-4ba6-af8a-ae670905c14c" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside>
+</div>
+</div></div>
+</div><!-- GBs --><div data-cprole="structuralContainer" id="gbsContainerTS"><div class="inner">
+<div class="siteWrap"><div data-cprole="contentContainer" id="gbsTS">	<div id="cc896c0180-28be-431f-a243-cfca4f3c877d" data-containerid="896c0180-28be-431f-a243-cfca4f3c877d" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile" data-contentcontainerbreakpoint="35">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col8 first" style="" data-widgetcontainerid="da4ab721-9f1e-497d-85f0-fe2898faf00b">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col8 first last idcc3178c3-1e0b-4826-81d7-ca0507214734" style="" data-widgetcontainerid="cc3178c3-1e0b-4826-81d7-ca0507214734">	
+<div data-widget-id="849fa5eb-eefd-4e13-a2c3-64bfa0aba809" data-widget-controller-path="/GraphicLinks/Widget">
+
+
+
+
+<div id="graphicLinkWidget849fa5eb-eefd-4e13-a2c3-64bfa0aba809" class="widget widgetGraphicLinks skin149 widgetOptionSet102 wide" data-elementqueryclasses='{"wide-narrow":"min-width:20em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' data-modulewidgettype="graphicLinks">
+	<div class="widgetHeader">
+		<div class="">
+				</div>
+	</div>
+	<div class="widgetBody cpGrid cpGrid2 ">
+		<nav class="widgetGraphicLinksNav" aria-labelledby="GraphicLinkHeaderText">
+				<div class="row   wide">
+					<!--
+--><div class="col col1 first "><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/3856/Connect-with-Us" target="_self" class="fancyButton fancyButton1526 ">
+		<span>
+			<span><span class="text">Connect With Us</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton1526.fancyButton:link,.fancyButton1526.fancyButton:visited, .fancyButton1526div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .2s ease-in-out;
+position: relative;
+z-index: 1;
+}
+
+.fancyButton1526::before {
+content: "";
+position: absolute;
+top: 20px;
+left: 50%;
+transform: translateX(-50%);
+width: calc(100% - 40px);
+height: calc(100% - 40px);
+z-index: -1;
+background: #fff;
+opacity: 0;
+transition: all .2s ease-in-out;
+}
+
+.fancyButton1526::after {
+content: "";
+position: absolute;
+top: 88px;
+left: 50%;
+transform: translateX(-50%);
+width: 0;
+height: 0;
+z-index: -1;
+background: #23978A;
+border-radius: 10px;
+opacity: 0;
+transition: all .2s ease-in-out;}
+.fancyButton1526.fancyButton:hover,.fancyButton1526.fancyButton:focus,.fancyButton1526.fancyButton:active,.fancyButton1526.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton1526:is(:hover,:focus,:active)::before {
+top: 0;
+width: 100%;
+height: 100%;
+opacity: 1;
+}
+
+.fancyButton1526:is(:hover,:focus,:active)::after {
+width: 80px;
+height: 80px;
+top: 48px;
+opacity: 1;}
+.fancyButton1526.fancyButton:link > span,.fancyButton1526.fancyButton:visited > span, .fancyButton1526div.fancyButton > span{
+}
+.fancyButton1526.fancyButton:hover > span,.fancyButton1526.fancyButton:focus > span,.fancyButton1526.fancyButton:active > span,.fancyButton1526.fancyButton.hover > span{
+}
+.fancyButton1526.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-family: "Montserrat";
+	padding-top: 142px;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 142px;
+	padding-right: 10px;
+	padding-left: 10px;
+	background-image: url('/ImageRepository/Document?documentID=38514');
+	background-repeat: no-repeat;
+	background-position: center 53px ;
+height: 220px;
+vertical-align: top;
+line-height: 1.2;
+transition: all .2s ease-in-out;
+}
+.fancyButton1526.fancyButton:hover .text,.fancyButton1526.fancyButton:focus .text,.fancyButton1526.fancyButton:active .text,.fancyButton1526.fancyButton.hover .text{
+	color: rgb(0, 62, 81);
+	text-decoration: underline;
+
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  last"><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/Assistance" target="_self" class="fancyButton fancyButton1528 ">
+		<span>
+			<span><span class="text">Assistance</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton1528.fancyButton:link,.fancyButton1528.fancyButton:visited, .fancyButton1528div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .2s ease-in-out;
+position: relative;
+z-index: 1;
+}
+
+.fancyButton1528::before {
+content: "";
+position: absolute;
+top: 20px;
+left: 50%;
+transform: translateX(-50%);
+width: calc(100% - 40px);
+height: calc(100% - 40px);
+z-index: -1;
+background: #fff;
+opacity: 0;
+transition: all .2s ease-in-out;
+}
+
+.fancyButton1528::after {
+content: "";
+position: absolute;
+top: 88px;
+left: 50%;
+transform: translateX(-50%);
+width: 0;
+height: 0;
+z-index: -1;
+background: #A3D365;
+border-radius: 10px;
+opacity: 0;
+transition: all .2s ease-in-out;}
+.fancyButton1528.fancyButton:hover,.fancyButton1528.fancyButton:focus,.fancyButton1528.fancyButton:active,.fancyButton1528.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton1528:is(:hover,:focus,:active)::before {
+top: 0;
+width: 100%;
+height: 100%;
+opacity: 1;
+}
+
+.fancyButton1528:is(:hover,:focus,:active)::after {
+width: 80px;
+height: 80px;
+top: 48px;
+opacity: 1;}
+.fancyButton1528.fancyButton:link > span,.fancyButton1528.fancyButton:visited > span, .fancyButton1528div.fancyButton > span{
+}
+.fancyButton1528.fancyButton:hover > span,.fancyButton1528.fancyButton:focus > span,.fancyButton1528.fancyButton:active > span,.fancyButton1528.fancyButton.hover > span{
+}
+.fancyButton1528.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-family: "Montserrat";
+	padding-top: 142px;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 142px;
+	padding-right: 10px;
+	padding-left: 10px;
+	background-image: url('/ImageRepository/Document?documentID=38512');
+	background-repeat: no-repeat;
+	background-position: center 53px ;
+height: 220px;
+vertical-align: top;
+line-height: 1.2;
+transition: all .2s ease-in-out;
+}
+.fancyButton1528.fancyButton:hover .text,.fancyButton1528.fancyButton:focus .text,.fancyButton1528.fancyButton:active .text,.fancyButton1528.fancyButton.hover .text{
+	color: rgb(0, 62, 81);
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=38513');
+
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!--				-->
+				</div>
+			</nav>
+		</div>
+	<div class="widgetFooter">
+			</div>
+</div>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col8" style="" data-widgetcontainerid="2702b992-d171-44d7-889b-21a5da1aa7b4">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col8 first last idf8570513-f115-4438-b390-1e5cb10adf4c" style="" data-widgetcontainerid="f8570513-f115-4438-b390-1e5cb10adf4c">	
+<div data-widget-id="43e01f23-76c7-4955-a544-f399b3bbf1d7" data-widget-controller-path="/GraphicLinks/Widget">
+
+
+
+
+<div id="graphicLinkWidget43e01f23-76c7-4955-a544-f399b3bbf1d7" class="widget widgetGraphicLinks skin149 widgetOptionSet102 wide" data-elementqueryclasses='{"wide-narrow":"min-width:20em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' data-modulewidgettype="graphicLinks">
+	<div class="widgetHeader">
+		<div class="">
+				</div>
+	</div>
+	<div class="widgetBody cpGrid cpGrid2 ">
+		<nav class="widgetGraphicLinksNav" aria-labelledby="GraphicLinkHeaderText">
+				<div class="row   wide">
+					<!--
+--><div class="col col1 first "><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/parks" target="_self" class="fancyButton fancyButton1538 ">
+		<span>
+			<span><span class="text">Parks and Recreation</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton1538.fancyButton:link,.fancyButton1538.fancyButton:visited, .fancyButton1538div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .2s ease-in-out;
+position: relative;
+z-index: 1;
+}
+
+.fancyButton1538::before {
+content: "";
+position: absolute;
+top: 20px;
+left: 50%;
+transform: translateX(-50%);
+width: calc(100% - 40px);
+height: calc(100% - 40px);
+z-index: -1;
+background: #fff;
+opacity: 0;
+transition: all .2s ease-in-out;
+}
+
+.fancyButton1538::after {
+content: "";
+position: absolute;
+top: 88px;
+left: 50%;
+transform: translateX(-50%);
+width: 0;
+height: 0;
+z-index: -1;
+background: #606FB0;
+border-radius: 10px;
+opacity: 0;
+transition: all .2s ease-in-out;}
+.fancyButton1538.fancyButton:hover,.fancyButton1538.fancyButton:focus,.fancyButton1538.fancyButton:active,.fancyButton1538.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton1538:is(:hover,:focus,:active)::before {
+top: 0;
+width: 100%;
+height: 100%;
+opacity: 1;
+}
+
+.fancyButton1538:is(:hover,:focus,:active)::after {
+width: 80px;
+height: 80px;
+top: 48px;
+opacity: 1;}
+.fancyButton1538.fancyButton:link > span,.fancyButton1538.fancyButton:visited > span, .fancyButton1538div.fancyButton > span{
+}
+.fancyButton1538.fancyButton:hover > span,.fancyButton1538.fancyButton:focus > span,.fancyButton1538.fancyButton:active > span,.fancyButton1538.fancyButton.hover > span{
+}
+.fancyButton1538.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-family: "Montserrat";
+	padding-top: 142px;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 142px;
+	padding-right: 10px;
+	padding-left: 10px;
+	background-image: url('/ImageRepository/Document?documentID=38515');
+	background-repeat: no-repeat;
+	background-position: center 53px ;
+height: 220px;
+vertical-align: top;
+line-height: 1.2;
+transition: all .2s ease-in-out;
+}
+.fancyButton1538.fancyButton:hover .text,.fancyButton1538.fancyButton:focus .text,.fancyButton1538.fancyButton:active .text,.fancyButton1538.fancyButton.hover .text{
+	color: rgb(0, 62, 81);
+	text-decoration: underline;
+
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  last"><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/1608/Payments-and-Permits" target="_self" class="fancyButton fancyButton1539 ">
+		<span>
+			<span><span class="text">Payments and Permits</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton1539.fancyButton:link,.fancyButton1539.fancyButton:visited, .fancyButton1539div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .2s ease-in-out;
+position: relative;
+z-index: 1;
+}
+
+.fancyButton1539::before {
+content: "";
+position: absolute;
+top: 20px;
+left: 50%;
+transform: translateX(-50%);
+width: calc(100% - 40px);
+height: calc(100% - 40px);
+z-index: -1;
+background: #fff;
+opacity: 0;
+transition: all .2s ease-in-out;
+}
+
+.fancyButton1539::after {
+content: "";
+position: absolute;
+top: 88px;
+left: 50%;
+transform: translateX(-50%);
+width: 0;
+height: 0;
+z-index: -1;
+background: #23978A;
+border-radius: 10px;
+opacity: 0;
+transition: all .2s ease-in-out;}
+.fancyButton1539.fancyButton:hover,.fancyButton1539.fancyButton:focus,.fancyButton1539.fancyButton:active,.fancyButton1539.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton1539:is(:hover,:focus,:active)::before {
+top: 0;
+width: 100%;
+height: 100%;
+opacity: 1;
+}
+
+.fancyButton1539:is(:hover,:focus,:active)::after {
+width: 80px;
+height: 80px;
+top: 48px;
+opacity: 1;}
+.fancyButton1539.fancyButton:link > span,.fancyButton1539.fancyButton:visited > span, .fancyButton1539div.fancyButton > span{
+}
+.fancyButton1539.fancyButton:hover > span,.fancyButton1539.fancyButton:focus > span,.fancyButton1539.fancyButton:active > span,.fancyButton1539.fancyButton.hover > span{
+}
+.fancyButton1539.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-family: "Montserrat";
+	padding-top: 142px;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 142px;
+	padding-right: 10px;
+	padding-left: 10px;
+	background-image: url('/ImageRepository/Document?documentID=38516');
+	background-repeat: no-repeat;
+	background-position: center 53px ;
+height: 220px;
+vertical-align: top;
+line-height: 1.2;
+transition: all .2s ease-in-out;
+}
+.fancyButton1539.fancyButton:hover .text,.fancyButton1539.fancyButton:focus .text,.fancyButton1539.fancyButton:active .text,.fancyButton1539.fancyButton.hover .text{
+	color: rgb(0, 62, 81);
+	text-decoration: underline;
+
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!--				-->
+				</div>
+			</nav>
+		</div>
+	<div class="widgetFooter">
+			</div>
+</div>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col8 last" style="" data-widgetcontainerid="ea9c1b9b-579f-495f-832a-86b47a73961a">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col8 first last id3b4981de-dd64-46b7-acde-89177d4c00bb" style="" data-widgetcontainerid="3b4981de-dd64-46b7-acde-89177d4c00bb">	
+<div data-widget-id="14c64b4b-7eb5-4ef8-b185-77f429f853d6" data-widget-controller-path="/GraphicLinks/Widget">
+
+
+
+
+<div id="graphicLinkWidget14c64b4b-7eb5-4ef8-b185-77f429f853d6" class="widget widgetGraphicLinks skin149 widgetOptionSet102 wide" data-elementqueryclasses='{"wide-narrow":"min-width:20em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' data-modulewidgettype="graphicLinks">
+	<div class="widgetHeader">
+		<div class="">
+				</div>
+	</div>
+	<div class="widgetBody cpGrid cpGrid2 ">
+		<nav class="widgetGraphicLinksNav" aria-labelledby="GraphicLinkHeaderText">
+				<div class="row   wide">
+					<!--
+--><div class="col col1 first "><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/236/Utilities" target="_self" class="fancyButton fancyButton1537 ">
+		<span>
+			<span><span class="text">Utilities</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton1537.fancyButton:link,.fancyButton1537.fancyButton:visited, .fancyButton1537div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .2s ease-in-out;
+position: relative;
+z-index: 1;
+}
+
+.fancyButton1537::before {
+content: "";
+position: absolute;
+top: 20px;
+left: 50%;
+transform: translateX(-50%);
+width: calc(100% - 40px);
+height: calc(100% - 40px);
+z-index: -1;
+background: #fff;
+opacity: 0;
+transition: all .2s ease-in-out;
+}
+
+.fancyButton1537::after {
+content: "";
+position: absolute;
+top: 88px;
+left: 50%;
+transform: translateX(-50%);
+width: 0;
+height: 0;
+z-index: -1;
+background: #A3D365;
+border-radius: 10px;
+opacity: 0;
+transition: all .2s ease-in-out;}
+.fancyButton1537.fancyButton:hover,.fancyButton1537.fancyButton:focus,.fancyButton1537.fancyButton:active,.fancyButton1537.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton1537:is(:hover,:focus,:active)::before {
+top: 0;
+width: 100%;
+height: 100%;
+opacity: 1;
+}
+
+.fancyButton1537:is(:hover,:focus,:active)::after {
+width: 80px;
+height: 80px;
+top: 48px;
+opacity: 1;}
+.fancyButton1537.fancyButton:link > span,.fancyButton1537.fancyButton:visited > span, .fancyButton1537div.fancyButton > span{
+}
+.fancyButton1537.fancyButton:hover > span,.fancyButton1537.fancyButton:focus > span,.fancyButton1537.fancyButton:active > span,.fancyButton1537.fancyButton.hover > span{
+}
+.fancyButton1537.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-family: "Montserrat";
+	padding-top: 142px;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 142px;
+	padding-right: 10px;
+	padding-left: 10px;
+	background-image: url('/ImageRepository/Document?documentID=38518');
+	background-repeat: no-repeat;
+	background-position: center 53px ;
+height: 220px;
+vertical-align: top;
+line-height: 1.2;
+transition: all .2s ease-in-out;
+}
+.fancyButton1537.fancyButton:hover .text,.fancyButton1537.fancyButton:focus .text,.fancyButton1537.fancyButton:active .text,.fancyButton1537.fancyButton.hover .text{
+	color: rgb(0, 62, 81);
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=38519');
+
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  last"><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/151" target="_self" class="fancyButton fancyButton1536 ">
+		<span>
+			<span><span class="text">Safety and Security</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton1536.fancyButton:link,.fancyButton1536.fancyButton:visited, .fancyButton1536div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .2s ease-in-out;
+position: relative;
+z-index: 1;
+}
+
+.fancyButton1536::before {
+content: "";
+position: absolute;
+top: 20px;
+left: 50%;
+transform: translateX(-50%);
+width: calc(100% - 40px);
+height: calc(100% - 40px);
+z-index: -1;
+background: #fff;
+opacity: 0;
+transition: all .2s ease-in-out;
+}
+
+.fancyButton1536::after {
+content: "";
+position: absolute;
+top: 88px;
+left: 50%;
+transform: translateX(-50%);
+width: 0;
+height: 0;
+z-index: -1;
+background: #606FB0;
+border-radius: 10px;
+opacity: 0;
+transition: all .2s ease-in-out;}
+.fancyButton1536.fancyButton:hover,.fancyButton1536.fancyButton:focus,.fancyButton1536.fancyButton:active,.fancyButton1536.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton1536:is(:hover,:focus,:active)::before {
+top: 0;
+width: 100%;
+height: 100%;
+opacity: 1;
+}
+
+.fancyButton1536:is(:hover,:focus,:active)::after {
+width: 80px;
+height: 80px;
+top: 48px;
+opacity: 1;}
+.fancyButton1536.fancyButton:link > span,.fancyButton1536.fancyButton:visited > span, .fancyButton1536div.fancyButton > span{
+}
+.fancyButton1536.fancyButton:hover > span,.fancyButton1536.fancyButton:focus > span,.fancyButton1536.fancyButton:active > span,.fancyButton1536.fancyButton.hover > span{
+}
+.fancyButton1536.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-family: "Montserrat";
+	padding-top: 142px;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 142px;
+	padding-right: 10px;
+	padding-left: 10px;
+	background-image: url('/ImageRepository/Document?documentID=38517');
+	background-repeat: no-repeat;
+	background-position: center 53px ;
+height: 220px;
+vertical-align: top;
+line-height: 1.2;
+transition: all .2s ease-in-out;
+}
+.fancyButton1536.fancyButton:hover .text,.fancyButton1536.fancyButton:focus .text,.fancyButton1536.fancyButton:active .text,.fancyButton1536.fancyButton.hover .text{
+	color: rgb(0, 62, 81);
+	text-decoration: underline;
+
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!--				-->
+				</div>
+			</nav>
+		</div>
+	<div class="widgetFooter">
+			</div>
+</div>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div></div>
+</div><!-- Calendar/Carousel --><!-- <div data-cpRole="structuralContainer" id="homeContainer1">
+    <div class="siteWrap2">
+      <div data-cpRole="contentContainer" id="homeContent1a"></div>
+    </div>
+  </div> --><!-- Extra --><div data-cprole="structuralContainer" id="homeContainer4">
+<div class="siteWrap"><div data-cprole="contentContainer" id="homeContent4a">	<div id="cc8c5e527f-f9bc-4291-a684-ce4ecd167c6f" data-containerid="8c5e527f-f9bc-4291-a684-ce4ecd167c6f" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</div></div>
+</div><!-- Footer --><footer data-cprole="structuralContainer" id="footerContainerTS"><div class="inner">
+<div class="siteWrap"><div data-cprole="contentContainer" id="footerTS">	<div id="cc1e37c40f-559e-4048-9282-2331151f3a86" data-containerid="1e37c40f-559e-4048-9282-2331151f3a86" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile" data-contentcontainerbreakpoint="70">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col3 first" style="" data-widgetcontainerid="0d2ca07d-f21c-4ac5-85dd-bfca6090a1e3">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col3 first last id5e198c9a-e8e7-46c0-b487-ea99df39c5e4" style="" data-widgetcontainerid="5e198c9a-e8e7-46c0-b487-ea99df39c5e4">	
+
+<div class="widget widgetSpacer" id="beafc947-0ae9-400c-a11b-95415ea54958"></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col18" style="" data-widgetcontainerid="f58ccf5e-713b-46e2-a33b-344a84cf7e3f">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col18 first last iddd4d2534-5acd-43eb-a5f3-0b887d668ee0" style="" data-widgetcontainerid="dd4d2534-5acd-43eb-a5f3-0b887d668ee0">	
+    <div data-widget-id="8637bd45-01f0-4b02-8e48-5e2ae3fe90d6" data-widget-controller-path="/InfoAdvanced/Widget">
+</div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col3 last" style="" data-widgetcontainerid="08b24fc9-1fcf-4681-a826-8cc594c72d24">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col3 first last ideeb33c8d-0f61-4662-9562-14473cf60220" style="" data-widgetcontainerid="eeb33c8d-0f61-4662-9562-14473cf60220">	
+
+<div class="widget widgetSpacer" id="6891754a-3254-433b-b9e8-5e6e3b906cf3"></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+		<div class="row outer wide"><!--
+--><div class="outer col col5 first" style="" data-widgetcontainerid="89ee4b9b-37d8-45ac-947e-c16bc872944b">				
+	<div class="row nest first wide">
+	
+	<div class="inner col col5 first last ide02d494c-c3d3-46fa-897f-290a7e8e8638" style="" data-widgetcontainerid="e02d494c-c3d3-46fa-897f-290a7e8e8638">	
+    <div data-widget-id="d5783f8d-3b4e-45ec-b615-fa634db6c5a3" data-widget-controller-path="/InfoAdvanced/Widget">
+
+
+
+
+
+	<section id="divInfoAdvd5783f8d-3b4e-45ec-b615-fa634db6c5a3" class="widget widgetInfoAdvanced skin150 widgetOptionSet5 wide" data-modulewidgettype="infoAdv" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-labelledby="headerd5783f8d-3b4e-45ec-b615-fa634db6c5a3">
+			<header class="widgetHeader" id="headerd5783f8d-3b4e-45ec-b615-fa634db6c5a3">
+		<div class="">
+					<h3>Contact Chesterfield</h3>
+								</div>
+	</header>
+	<div class="widgetBody  cpGrid cpGrid1 ">
+		<div class="row  wide">
+					<div class="col col1 first last">
+						<ol class="pageStyles semanticList">
+
+<li class="InfoAdvanced widgetItem fr-view">
+	<p>9901 Lori Road</p>
+</li>
+<li class="InfoAdvanced widgetItem fr-view">
+	<p>Chesterfield, VA 23832</p>
+</li>
+<li class="InfoAdvanced widgetItem fr-view">
+	<div style="margin-bottom:0.5em;">General Information: 804-748-1000</div>
+</li>						</ol>
+					</div>
+		</div>
+	</div>
+	<div class="widgetFooter">
+
+	</div>
+
+	</section>
+
+
+
+<script type="text/javascript">
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvd5783f8d-3b4e-45ec-b615-fa634db6c5a3 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+</script></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+	<div class="row nest last wide">
+	
+	<div class="inner col col5 first last idc40d46fa-8432-497a-a531-c24590e00fe7" style="" data-widgetcontainerid="c40d46fa-8432-497a-a531-c24590e00fe7">	
+<div data-widget-id="8209f676-1c3a-4819-bb06-818d4660fe97" data-widget-controller-path="/GraphicLinks/Widget">
+
+
+
+
+<div id="graphicLinkWidget8209f676-1c3a-4819-bb06-818d4660fe97" class="widget widgetGraphicLinks skin175 widgetOptionSet102 wide" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' data-modulewidgettype="graphicLinks">
+	<div class="widgetHeader">
+		<div class="">
+				</div>
+	</div>
+	<div class="widgetBody cpGrid cpGrid1 ">
+		<nav class="widgetGraphicLinksNav" aria-labelledby="GraphicLinkHeaderText">
+					<ul class="semanticList">
+						<!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/report" target="_self" class="fancyButton fancyButton1643 ">
+		<span>
+			<span><span class="text">Report or Request</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton1643.fancyButton:link,.fancyButton1643.fancyButton:visited, .fancyButton1643div.fancyButton{
+	background-color: rgb(94, 109, 178);
+	padding-top: .5em;
+	padding-bottom: .5em;
+	background-repeat: no-repeat;
+	background-position: 11em  center;
+border-radius:6px;}
+.fancyButton1643.fancyButton:hover,.fancyButton1643.fancyButton:focus,.fancyButton1643.fancyButton:active,.fancyButton1643.fancyButton.hover{
+	background-color: rgb(71, 82, 133);
+	background-repeat: no-repeat;
+}
+.fancyButton1643.fancyButton:link > span,.fancyButton1643.fancyButton:visited > span, .fancyButton1643div.fancyButton > span{
+}
+.fancyButton1643.fancyButton:hover > span,.fancyButton1643.fancyButton:focus > span,.fancyButton1643.fancyButton:active > span,.fancyButton1643.fancyButton.hover > span{
+}
+.fancyButton1643.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 0.95em;
+	font-family: "Montserrat";
+	font-weight: 700;
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=39228');
+	background-repeat: no-repeat;
+	background-position: 1.25em  center;
+
+text-transform:uppercase;
+text-align:left;
+padding-left:3.5em;}
+.fancyButton1643.fancyButton:hover .text,.fancyButton1643.fancyButton:focus .text,.fancyButton1643.fancyButton:active .text,.fancyButton1643.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+
+
+}
+</style>
+
+ </li><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/directory.aspx" target="_self" class="fancyButton fancyButton1644 ">
+		<span>
+			<span><span class="text">Staff Directory</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton1644.fancyButton:link,.fancyButton1644.fancyButton:visited, .fancyButton1644div.fancyButton{
+	background-color: rgb(94, 109, 178);
+	padding-top: .5em;
+	padding-bottom: .5em;
+	background-repeat: no-repeat;
+	background-position: 11em  center;
+border-radius:6px;}
+.fancyButton1644.fancyButton:hover,.fancyButton1644.fancyButton:focus,.fancyButton1644.fancyButton:active,.fancyButton1644.fancyButton.hover{
+	background-color: rgb(71, 82, 133);
+	background-repeat: no-repeat;
+}
+.fancyButton1644.fancyButton:link > span,.fancyButton1644.fancyButton:visited > span, .fancyButton1644div.fancyButton > span{
+}
+.fancyButton1644.fancyButton:hover > span,.fancyButton1644.fancyButton:focus > span,.fancyButton1644.fancyButton:active > span,.fancyButton1644.fancyButton.hover > span{
+}
+.fancyButton1644.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 0.95em;
+	font-family: "Montserrat";
+	font-weight: 700;
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=39226');
+	background-repeat: no-repeat;
+	background-position: 1.25em  center;
+
+text-transform:uppercase;
+text-align:left;
+padding-left:3.5em;}
+.fancyButton1644.fancyButton:hover .text,.fancyButton1644.fancyButton:focus .text,.fancyButton1644.fancyButton:active .text,.fancyButton1644.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+
+
+}
+</style>
+
+ </li><!--
+					-->
+					</ul>
+			</nav>
+		</div>
+	<div class="widgetFooter">
+			</div>
+</div>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col2" style="" data-widgetcontainerid="2818ad1b-ef4c-49f7-8258-5921fb93c4e1">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col2 first last idd6c2eac6-21cf-4e25-a152-d7f7ff067caa" style="" data-widgetcontainerid="d6c2eac6-21cf-4e25-a152-d7f7ff067caa">	
+
+<div class="widget widgetSpacer" id="e9ea4126-f7b1-4271-9d52-55d22865096e"></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col4" style="" data-widgetcontainerid="c4c17c0e-224d-40ab-abb5-17986affca52">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col4 first last id6cfdd989-c302-4b25-be09-31971d991a4e" style="" data-widgetcontainerid="6cfdd989-c302-4b25-be09-31971d991a4e">	
+	<div data-widget-id="df0bcb93-33c6-41eb-9e39-cd31485dc53c" data-widget-controller-path="/QuickLinks/Widget">
+
+
+
+
+
+
+
+
+	<section id="widgetQuicklinkdf0bcb93-33c6-41eb-9e39-cd31485dc53c" class="widget widgetQuickLinks skin155 widgetOptionSet27 narrow" data-modulewidgettype="quickLinks" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-labelledby="quickLinksHeaderdf0bcb93-33c6-41eb-9e39-cd31485dc53c">
+			<header class="widgetHeader" id="quickLinksHeaderdf0bcb93-33c6-41eb-9e39-cd31485dc53c">
+		<div class="">
+					<h3><a style="" href="/QuickLinks.aspx?CID=16">Quick Links</a></h3>
+						</div>
+	</header>
+	<div class="widgetBody cpGrid cpGrid1 ">
+        <div class="row  narrow">
+				<div class="col col1 first last">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://chesterfieldcova.portal.civicclerk.com/" target="_blank" aria-label="Agendas and Minutes opens in new window">Agendas and Minutes</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/calendar.aspx" target="_self">Calendar</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/302/Careers" target="_self">Careers</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/27/Government" target="_self">Departments and Offices</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/facilities" target="_self">Facilities</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/financialtransparency" target="_self">Financial Transparency</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/5430/County-Holiday-Schedule" target="_self">Holidays and Closures</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+		</div>
+        
+	</div>
+	<div class="widgetFooter">
+	</div>
+	<div class="addItemModal hidden">
+		<div class="url hidden">/QuickLinks.aspx</div>
+	</div>
+
+	</section>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col2" style="" data-widgetcontainerid="26a72b10-5493-489c-83c4-45ea8f2fb3c6">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col2 first last id801d21d9-1a0f-40a0-9e53-bcb7cb0313ec" style="" data-widgetcontainerid="801d21d9-1a0f-40a0-9e53-bcb7cb0313ec">	
+
+<div class="widget widgetSpacer" id="7a501f4f-9abf-4044-87ef-54b6a9dfcbd1"></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col5" style="" data-widgetcontainerid="ed23a978-0954-4a33-b46e-14519c27803f">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col5 first last id9e73cad4-f7ad-4403-8b11-b2a33602c58f" style="" data-widgetcontainerid="9e73cad4-f7ad-4403-8b11-b2a33602c58f">	
+	<div data-widget-id="5745f887-bfcb-42d4-8cde-e759fb60ba03" data-widget-controller-path="/QuickLinks/Widget">
+
+
+
+
+
+
+
+
+	<section id="widgetQuicklink5745f887-bfcb-42d4-8cde-e759fb60ba03" class="widget widgetQuickLinks skin156 widgetOptionSet27 narrow" data-modulewidgettype="quickLinks" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-labelledby="quickLinksHeader5745f887-bfcb-42d4-8cde-e759fb60ba03">
+			<header class="widgetHeader" id="quickLinksHeader5745f887-bfcb-42d4-8cde-e759fb60ba03">
+		<div class="">
+					<h3><a style="" href="/QuickLinks.aspx?CID=236">Website Assistance</a></h3>
+						</div>
+	</header>
+	<div class="widgetBody cpGrid cpGrid1 ">
+        <div class="row  narrow">
+				<div class="col col1 first last">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/site/accessibility" target="_self">Accessibility</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/DocumentCenter" target="_self">Documents</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/notifyme" target="_self">Notifications</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/privacy" target="_self">Privacy Policy</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/3683/Freedom-of-Information-Act-Requests" target="_self">Public Records (FOIA)</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/sitemap" target="_self">Site Map</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://translate.google.com/translate?sl=auto&amp;tl=es&amp;hl=en&amp;u=https://www.chesterfield.gov/&amp;client=webapp" target="_self">Translate</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+		</div>
+        
+	</div>
+	<div class="widgetFooter">
+	</div>
+	<div class="addItemModal hidden">
+		<div class="url hidden">/QuickLinks.aspx</div>
+	</div>
+
+	</section>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col1" style="" data-widgetcontainerid="1029a384-0f89-4a3d-9930-24bcfa96be3d">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col1 first last iddf059fe5-76f9-486a-a9ed-8f85bc758c44" style="" data-widgetcontainerid="df059fe5-76f9-486a-a9ed-8f85bc758c44">	
+
+<div class="widget widgetSpacer" id="1833bd76-37b1-455c-87c0-63ee961cca64"></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col5 last" style="" data-widgetcontainerid="a6857d35-9594-4823-90cd-6c06b02bf81b">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col5 first last id9167af89-c166-4980-9b80-4a12ef285d53" style="" data-widgetcontainerid="9167af89-c166-4980-9b80-4a12ef285d53">	
+    <div data-widget-id="febff861-35a0-4998-bcaf-c3ee4f2050be" data-widget-controller-path="/InfoAdvanced/Widget">
+
+
+
+
+
+	<section id="divInfoAdvfebff861-35a0-4998-bcaf-c3ee4f2050be" class="widget widgetInfoAdvanced skin147 widgetOptionSet5 wide" data-modulewidgettype="infoAdv" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-label="Info Advanced">
+			<header class="widgetHeader" id="headerfebff861-35a0-4998-bcaf-c3ee4f2050be">
+		<div class="">
+								</div>
+	</header>
+	<div class="widgetBody  cpGrid cpGrid1 ">
+		<div class="row  wide">
+					<div class="col col1 first last">
+						<ol class="pageStyles semanticList">
+
+<li class="InfoAdvanced widgetItem fr-view">
+	<div style="margin-top:10%; margin-bottom:10%;"><a href="/"><img src="/ImageRepository/Document?documentId=38495" class="fr-dib" alt="Chesterfield County Virginia seal" style="width: 250px;"></a></div>
+</li>						</ol>
+					</div>
+		</div>
+	</div>
+	<div class="widgetFooter">
+
+	</div>
+
+	</section>
+
+
+
+<script type="text/javascript">
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvfebff861-35a0-4998-bcaf-c3ee4f2050be .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+</script></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div></div>
+</footer><!-- Powered By --><div data-cprole="structuralContainer" id="poweredByContainerTS">
+<div class="siteWrap"><div data-cprole="contentContainer" id="socialsTS">	<div id="cc12baa8b5-70d9-4d30-a431-a5fad637b086" data-containerid="12baa8b5-70d9-4d30-a431-a5fad637b086" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="6e0a4b13-1d16-44ee-b5f1-6a8d42277590">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col24 first last idf8735313-12d5-4011-8701-71ef4839f263" style="" data-widgetcontainerid="f8735313-12d5-4011-8701-71ef4839f263">	
+<div data-widget-id="d47b3c89-54a0-4e02-8956-c2dbcc69c339" data-widget-controller-path="/GraphicLinks/Widget">
+
+
+
+
+<div id="graphicLinkWidgetd47b3c89-54a0-4e02-8956-c2dbcc69c339" class="widget widgetGraphicLinks skin152 widgetOptionSet102 wide" data-elementqueryclasses='{"wide-narrow":"min-width:1em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' data-modulewidgettype="graphicLinks">
+	<div class="widgetHeader">
+		<div class="">
+				</div>
+	</div>
+	<div class="widgetBody cpGrid cpGrid6 ">
+		<nav class="widgetGraphicLinksNav" aria-labelledby="GraphicLinkHeaderText">
+				<div class="row   wide">
+					<!--
+--><div class="col col1 first "><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/facebook" target="_self" class="fancyButton fancyButton1520 ">
+		<span>
+			<span><span class="text">Facebook</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton1520.fancyButton:link,.fancyButton1520.fancyButton:visited, .fancyButton1520div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+max-width: 60px;
+margin: 0 auto;
+transition: all .2s ease-in-out;}
+.fancyButton1520.fancyButton:hover,.fancyButton1520.fancyButton:focus,.fancyButton1520.fancyButton:active,.fancyButton1520.fancyButton.hover{
+	background-color: rgb(35, 151, 138);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton1520.fancyButton:link > span,.fancyButton1520.fancyButton:visited > span, .fancyButton1520div.fancyButton > span{
+}
+.fancyButton1520.fancyButton:hover > span,.fancyButton1520.fancyButton:focus > span,.fancyButton1520.fancyButton:active > span,.fancyButton1520.fancyButton.hover > span{
+}
+.fancyButton1520.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: .1em;
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=38500');
+	background-repeat: no-repeat;
+	background-position: center center;
+height: 60px;
+background-size: 24px;
+color: transparent;
+transition: all .2s ease-in-out;
+}
+.fancyButton1520.fancyButton:hover .text,.fancyButton1520.fancyButton:focus .text,.fancyButton1520.fancyButton:active .text,.fancyButton1520.fancyButton.hover .text{
+	text-decoration: underline;
+background-size: 30px;
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  "><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/instagram" target="_self" class="fancyButton fancyButton1531 ">
+		<span>
+			<span><span class="text">Instagram</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton1531.fancyButton:link,.fancyButton1531.fancyButton:visited, .fancyButton1531div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+max-width: 60px;
+margin: 0 auto;
+transition: all .2s ease-in-out;}
+.fancyButton1531.fancyButton:hover,.fancyButton1531.fancyButton:focus,.fancyButton1531.fancyButton:active,.fancyButton1531.fancyButton.hover{
+	background-color: rgb(35, 151, 138);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton1531.fancyButton:link > span,.fancyButton1531.fancyButton:visited > span, .fancyButton1531div.fancyButton > span{
+}
+.fancyButton1531.fancyButton:hover > span,.fancyButton1531.fancyButton:focus > span,.fancyButton1531.fancyButton:active > span,.fancyButton1531.fancyButton.hover > span{
+}
+.fancyButton1531.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: .1em;
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=38501');
+	background-repeat: no-repeat;
+	background-position: center center;
+height: 60px;
+background-size: 24px;
+color: transparent;
+transition: all .2s ease-in-out;
+}
+.fancyButton1531.fancyButton:hover .text,.fancyButton1531.fancyButton:focus .text,.fancyButton1531.fancyButton:active .text,.fancyButton1531.fancyButton.hover .text{
+	text-decoration: underline;
+background-size: 30px;
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  "><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/youtube" target="_self" class="fancyButton fancyButton1530 ">
+		<span>
+			<span><span class="text">YouTube</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton1530.fancyButton:link,.fancyButton1530.fancyButton:visited, .fancyButton1530div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+max-width: 60px;
+margin: 0 auto;
+transition: all .2s ease-in-out;}
+.fancyButton1530.fancyButton:hover,.fancyButton1530.fancyButton:focus,.fancyButton1530.fancyButton:active,.fancyButton1530.fancyButton.hover{
+	background-color: rgb(35, 151, 138);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton1530.fancyButton:link > span,.fancyButton1530.fancyButton:visited > span, .fancyButton1530div.fancyButton > span{
+}
+.fancyButton1530.fancyButton:hover > span,.fancyButton1530.fancyButton:focus > span,.fancyButton1530.fancyButton:active > span,.fancyButton1530.fancyButton.hover > span{
+}
+.fancyButton1530.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: .1em;
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=38511');
+	background-repeat: no-repeat;
+	background-position: center center;
+height: 60px;
+background-size: 24px;
+color: transparent;
+transition: all .2s ease-in-out;
+}
+.fancyButton1530.fancyButton:hover .text,.fancyButton1530.fancyButton:focus .text,.fancyButton1530.fancyButton:active .text,.fancyButton1530.fancyButton.hover .text{
+	text-decoration: underline;
+background-size: 30px;
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  "><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="https://us.nextdoor.com/agency-detail/va/chesterfield/chesterfield-county-government/" target="_blank" class="fancyButton fancyButton1532 " aria-label="Nextdoor Opens in new window">
+		<span>
+			<span><span class="text">Nextdoor</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton1532.fancyButton:link,.fancyButton1532.fancyButton:visited, .fancyButton1532div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+max-width: 60px;
+margin: 0 auto;
+transition: all .2s ease-in-out;}
+.fancyButton1532.fancyButton:hover,.fancyButton1532.fancyButton:focus,.fancyButton1532.fancyButton:active,.fancyButton1532.fancyButton.hover{
+	background-color: rgb(35, 151, 138);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton1532.fancyButton:link > span,.fancyButton1532.fancyButton:visited > span, .fancyButton1532div.fancyButton > span{
+}
+.fancyButton1532.fancyButton:hover > span,.fancyButton1532.fancyButton:focus > span,.fancyButton1532.fancyButton:active > span,.fancyButton1532.fancyButton.hover > span{
+}
+.fancyButton1532.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: .1em;
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=38503');
+	background-repeat: no-repeat;
+	background-position: center center;
+height: 60px;
+background-size: 24px;
+color: transparent;
+transition: all .2s ease-in-out;
+}
+.fancyButton1532.fancyButton:hover .text,.fancyButton1532.fancyButton:focus .text,.fancyButton1532.fancyButton:active .text,.fancyButton1532.fancyButton.hover .text{
+	text-decoration: underline;
+background-size: 30px;
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  "><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/twitter" target="_self" class="fancyButton fancyButton1529 ">
+		<span>
+			<span><span class="text">Twitter</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton1529.fancyButton:link,.fancyButton1529.fancyButton:visited, .fancyButton1529div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+max-width: 60px;
+margin: 0 auto;
+transition: all .2s ease-in-out;}
+.fancyButton1529.fancyButton:hover,.fancyButton1529.fancyButton:focus,.fancyButton1529.fancyButton:active,.fancyButton1529.fancyButton.hover{
+	background-color: rgb(35, 151, 138);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton1529.fancyButton:link > span,.fancyButton1529.fancyButton:visited > span, .fancyButton1529div.fancyButton > span{
+}
+.fancyButton1529.fancyButton:hover > span,.fancyButton1529.fancyButton:focus > span,.fancyButton1529.fancyButton:active > span,.fancyButton1529.fancyButton.hover > span{
+}
+.fancyButton1529.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: .1em;
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=38510');
+	background-repeat: no-repeat;
+	background-position: center center;
+height: 60px;
+background-size: 20px;
+color: transparent;
+transition: all .2s ease-in-out;
+}
+.fancyButton1529.fancyButton:hover .text,.fancyButton1529.fancyButton:focus .text,.fancyButton1529.fancyButton:active .text,.fancyButton1529.fancyButton.hover .text{
+	text-decoration: underline;
+background-size: 28px;
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  last"><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="https://www.linkedin.com/company/chesterfield-county" target="_blank" class="fancyButton fancyButton1619 " aria-label="Facebook Opens in new window">
+		<span>
+			<span><span class="text">Facebook</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton1619.fancyButton:link,.fancyButton1619.fancyButton:visited, .fancyButton1619div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+max-width: 60px;
+margin: 0 auto;
+transition: all .2s ease-in-out;}
+.fancyButton1619.fancyButton:hover,.fancyButton1619.fancyButton:focus,.fancyButton1619.fancyButton:active,.fancyButton1619.fancyButton.hover{
+	background-color: rgb(35, 151, 138);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton1619.fancyButton:link > span,.fancyButton1619.fancyButton:visited > span, .fancyButton1619div.fancyButton > span{
+}
+.fancyButton1619.fancyButton:hover > span,.fancyButton1619.fancyButton:focus > span,.fancyButton1619.fancyButton:active > span,.fancyButton1619.fancyButton.hover > span{
+}
+.fancyButton1619.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: .1em;
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=38502');
+	background-repeat: no-repeat;
+	background-position: center center;
+height: 60px;
+background-size: 24px;
+color: transparent;
+transition: all .2s ease-in-out;
+}
+.fancyButton1619.fancyButton:hover .text,.fancyButton1619.fancyButton:focus .text,.fancyButton1619.fancyButton:active .text,.fancyButton1619.fancyButton.hover .text{
+	text-decoration: underline;
+background-size: 30px;
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!--				-->
+				</div>
+			</nav>
+		</div>
+	<div class="widgetFooter">
+			</div>
+</div>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div><div data-cprole="contentContainer" id="poweredByTS">	<div id="cc1cc91b51-e91c-4cd2-bba0-d1e5e553abe2" data-containerid="1cc91b51-e91c-4cd2-bba0-d1e5e553abe2" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="fb1e6ec7-0b72-4ee2-b32b-0b23600127a9">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col24 first last idbe431e3a-df25-4490-87db-a4f5b1304aca" style="" data-widgetcontainerid="be431e3a-df25-4490-87db-a4f5b1304aca">	
+ 
+	<div data-widget-id='bd73ae4a-1ec5-4115-9ef2-136111e35f9a' data-modulename="customHtml" id='widgetCustomHtmlbd73ae4a-1ec5-4115-9ef2-136111e35f9a' class="widget widgetCustomHtml skin154 narrow">
+	<div class="widgetBody pageStyles" id="widgetBodybd73ae4a-1ec5-4115-9ef2-136111e35f9a">
+		<div id="customHtmlbd73ae4a-1ec5-4115-9ef2-136111e35f9a"><div><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+<style>
+
+/* ==============================
+   InfoAdvanced Callout Skins
+   191 = red / Ongoing
+   192 = blue / Information
+   193 = green / New
+   194 = gold / Notice
+   195 = purple / Payment Info
+================================= */
+
+/* Shared callout defaults */
+.widget.skin191,
+.widget.skin192,
+.widget.skin193,
+.widget.skin194,
+.widget.skin195 {
+  --callout-bg: #fff0ef;
+  --callout-border: #b42318;
+  --callout-heading: #1e8276;
+  --callout-badge-label: 'Active';
+  --callout-badge-text: #8a1f18;
+  --callout-badge-bg: #fff0ef;
+  --callout-badge-border: #f2b8b5;
+
+  background-color: var(--callout-bg) !important;
+  text-align: left !important;
+  outline: 10px solid var(--callout-bg) !important;
+  border: 1px solid var(--callout-border) !important;
+  padding: 1em 0 !important;
+  border-radius: 0 20px !important;
+}
+
+/* Red callout */
+.widget.skin191 {
+  --callout-bg: #fff0ef;
+  --callout-border: #b42318;
+  --callout-heading: #1e8276;
+  --callout-badge-label: 'Ongoing';
+  --callout-badge-text: #8a1f18;
+  --callout-badge-bg: #fff0ef;
+  --callout-badge-border: #f2b8b5;
+}
+
+/* Blue callout */
+.widget.skin192 {
+  --callout-bg: #eaf5ff;
+  --callout-border: #1b75bb;
+  --callout-heading: #005f8f;
+  --callout-badge-label: 'Information';
+  --callout-badge-text: #0f4f78;
+  --callout-badge-bg: #f4faff;
+  --callout-badge-border: #b8daf2;
+}
+
+/* Green callout */
+.widget.skin193 {
+  --callout-bg: #eef8e8;
+  --callout-border: #4f7d2a;
+  --callout-heading: #3f6f21;
+  --callout-badge-label: 'New';
+  --callout-badge-text: #315816;
+  --callout-badge-bg: #f7fcf3;
+  --callout-badge-border: #c9e5b5;
+}
+
+/* Gold callout */
+.widget.skin194 {
+  --callout-bg: #fff4df;
+  --callout-border: #a85f00;
+  --callout-heading: #8a4f00;
+  --callout-badge-label: 'Notice';
+  --callout-badge-text: #7a4400;
+  --callout-badge-bg: #fff9ed;
+  --callout-badge-border: #f1cf96;
+}
+
+/* Purple callout */
+.widget.skin195 {
+  --callout-bg: #f0efff;
+  --callout-border: #5f5aa2;
+  --callout-heading: #4f4a8f;
+  --callout-badge-label: 'Payment Info';
+  --callout-badge-text: #3f3a78;
+  --callout-badge-bg: #f8f7ff;
+  --callout-badge-border: #cac7ee;
+}
+
+/* Remove any previous header icon/badge pseudo-elements */
+.widget.skin191 .widgetHeader:before,
+.widget.skin191 .widgetHeader:after,
+.widget.skin191 .widgetHeader > div:before,
+.widget.skin192 .widgetHeader:before,
+.widget.skin192 .widgetHeader:after,
+.widget.skin192 .widgetHeader > div:before,
+.widget.skin193 .widgetHeader:before,
+.widget.skin193 .widgetHeader:after,
+.widget.skin193 .widgetHeader > div:before,
+.widget.skin194 .widgetHeader:before,
+.widget.skin194 .widgetHeader:after,
+.widget.skin194 .widgetHeader > div:before,
+.widget.skin195 .widgetHeader:before,
+.widget.skin195 .widgetHeader:after,
+.widget.skin195 .widgetHeader > div:before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Header container */
+.widget.skin191 .widgetHeader,
+.widget.skin192 .widgetHeader,
+.widget.skin193 .widgetHeader,
+.widget.skin194 .widgetHeader,
+.widget.skin195 .widgetHeader {
+  position: relative;
+  padding: 0.2rem 0.875rem;
+  margin: 0;
+}
+
+/* Heading row */
+.widget.skin191 .widgetHeader > div,
+.widget.skin192 .widgetHeader > div,
+.widget.skin193 .widgetHeader > div,
+.widget.skin194 .widgetHeader > div,
+.widget.skin195 .widgetHeader > div {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+  flex-wrap: wrap !important;
+}
+
+/* Heading */
+.widget.skin191 .widgetHeader h3,
+.widget.skin192 .widgetHeader h3,
+.widget.skin193 .widgetHeader h3,
+.widget.skin194 .widgetHeader h3,
+.widget.skin195 .widgetHeader h3 {
+  margin: 0 0 0.2em 0.2em !important;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5em;
+  line-height: 1.2;
+}
+
+/* Badge directly after heading */
+.widget.skin191 .widgetHeader > div:after,
+.widget.skin192 .widgetHeader > div:after,
+.widget.skin193 .widgetHeader > div:after,
+.widget.skin194 .widgetHeader > div:after,
+.widget.skin195 .widgetHeader > div:after {
+  content: var(--callout-badge-label);
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 0.22rem 0.55rem;
+  color: var(--callout-badge-text);
+  background-color: var(--callout-badge-bg);
+  border: 1px solid var(--callout-badge-border);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ==============================
+   Update Cards
+================================= */
+
+.storm-update-card {
+  --update-accent: #006c70;
+  --update-accent-bg: #e7f6f3;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 0.875rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: 1px solid #e5dada;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.storm-update-card:last-child {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.storm-update-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  color: var(--update-accent);
+  background: var(--update-accent-bg);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.storm-update-card__icon .material-symbols-outlined {
+  font-size: 1.85rem;
+  line-height: 1;
+}
+
+/* Prevent Google Translate from breaking Material Symbols ligatures */
+.material-symbols-outlined.notranslate {
+  font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.storm-update-card__content {
+  min-width: 0;
+}
+
+/* Light spacing reset so CivicPlus/site typography still controls headings, text and links */
+.storm-update-card__content > :first-child {
+  margin-top: 0 !important;
+}
+
+.storm-update-card__content > :last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Card accent color options */
+.storm-update-card--blue {
+  --update-accent: #1b75bb;
+  --update-accent-bg: #eaf5ff;
+}
+
+.storm-update-card--teal {
+  --update-accent: #006c70;
+  --update-accent-bg: #e7f6f3;
+}
+
+.storm-update-card--green {
+  --update-accent: #4f7d2a;
+  --update-accent-bg: #eef8e8;
+}
+
+.storm-update-card--gold {
+  --update-accent: #a85f00;
+  --update-accent-bg: #fff4df;
+}
+
+.storm-update-card--purple {
+  --update-accent: #5f5aa2;
+  --update-accent-bg: #f0efff;
+}
+
+.storm-update-card--red {
+  --update-accent: #b42318;
+  --update-accent-bg: #fff0ef;
+}
+
+/* Optional table styling inside update cards */
+.storm-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 0.75rem;
+}
+
+.storm-hours-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+}
+
+.storm-hours-table caption {
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.storm-hours-table th,
+.storm-hours-table td {
+  padding: 0.5rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.storm-hours-table th {
+  font-weight: 700;
+}
+
+/* ==============================
+   Mobile
+================================= */
+
+@media (max-width: 600px) {
+  .widget.skin191 .widgetHeader,
+  .widget.skin192 .widgetHeader,
+  .widget.skin193 .widgetHeader,
+  .widget.skin194 .widgetHeader,
+  .widget.skin195 .widgetHeader {
+    padding-bottom: 0.75rem;
+  }
+
+  .widget.skin191 .widgetHeader > div,
+  .widget.skin192 .widgetHeader > div,
+  .widget.skin193 .widgetHeader > div,
+  .widget.skin194 .widgetHeader > div,
+  .widget.skin195 .widgetHeader > div {
+    gap: 0.45rem !important;
+  }
+
+  .widget.skin191 .widgetHeader h3,
+  .widget.skin192 .widgetHeader h3,
+  .widget.skin193 .widgetHeader h3,
+  .widget.skin194 .widgetHeader h3,
+  .widget.skin195 .widgetHeader h3 {
+    font-size: 1.35em;
+  }
+
+  .widget.skin191 .widgetHeader > div:after,
+  .widget.skin192 .widgetHeader > div:after,
+  .widget.skin193 .widgetHeader > div:after,
+  .widget.skin194 .widgetHeader > div:after,
+  .widget.skin195 .widgetHeader > div:after {
+    font-size: 0.6rem;
+    padding: 0.18rem 0.45rem;
+  }
+
+  .storm-update-card {
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding: 0.875rem 1rem;
+  }
+
+  .storm-update-card__icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 9px;
+  }
+
+  .storm-update-card__icon .material-symbols-outlined {
+    font-size: 1.6rem;
+  }
+}
+
+/* Callout Box */
+.callout {
+  --callout-bg: #eaf5ff;
+  --callout-border: #1b75bb;
+  --callout-icon: #1b75bb;
+
+  border-radius: 0px 20px 0px 20px !important;
+  padding: 15px 15px 15px 45px !important;
+  margin: 20px 8px !important;
+  position: relative !important;
+  background-color: var(--callout-bg) !important;
+  border: 1px solid var(--callout-border) !important;
+  outline: 8px solid var(--callout-bg) !important;
+}
+
+/* Callout Icon */
+.callout:before {
+  font-family: 'Material Symbols Outlined';
+  position: absolute;
+  left: 12px;
+  top: 17px;
+  font-size: 24px;
+  color: var(--callout-icon);
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+@media (max-width: 600px) {
+  .callout {
+    padding-top: 45px !important;
+    padding-left: 15px !important;
+  }
+
+  .callout:before {
+    position: absolute !important;
+    left: 50% !important;
+    top: 10px !important;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Yellow/Gold variant */
+.yellow {
+  --callout-bg: #fff4df;
+  --callout-border: #a85f00;
+  --callout-icon: #a85f00;
+}
+
+.yellow:before {
+  content: 'warning';
+}
+
+/* Red variant */
+.red {
+  --callout-bg: #fff0ef;
+  --callout-border: #b42318;
+  --callout-icon: #b42318;
+}
+
+.red:before {
+  content: 'dangerous';
+}
+
+/* Green variant */
+.green {
+  --callout-bg: #eef8e8;
+  --callout-border: #4f7d2a;
+  --callout-icon: #4f7d2a;
+}
+
+.green:before {
+  content: 'check_circle';
+}
+
+/* Blue variant */
+.blue {
+  --callout-bg: #eaf5ff;
+  --callout-border: #1b75bb;
+  --callout-icon: #1b75bb;
+}
+
+.blue:before {
+  content: 'info';
+}
+
+/* Purple variant */
+.longnaker {
+  --callout-bg: #f0efff;
+  --callout-border: #5f5aa2;
+  --callout-icon: #5f5aa2;
+}
+
+.longnaker:before {
+  content: 'info';
+}
+
+/* Optional cleaner purple alias for future use */
+.purple {
+  --callout-bg: #f0efff;
+  --callout-border: #5f5aa2;
+  --callout-icon: #5f5aa2;
+}
+
+.purple:before {
+  content: 'info';
+}
+
+img.media.cover {
+  width: 28% !important;
+  object-fit: cover;
+  height: 200px !important;
+}
+</style>
+
+<script type="text/javascript">
+  function translatePage() {
+    var currentUrl = window.location.href;
+    var translateUrl = "https://translate.google.com/translate?hl=&sl=auto&tl=es&u=" + encodeURIComponent(currentUrl);
+    window.location.href = translateUrl;
+  }
+</script>
+
+<style scoped="scoped">
+.fancyButton1535.fancyButton:link,
+.fancyButton1535.fancyButton:visited,
+.fancyButton1535div.fancyButton {
+  padding-right: 15px;
+  padding-left: 30px;
+  background-image: url('/ImageRepository/Document?documentID=38499');
+  background-repeat: no-repeat;
+  background-position: left center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.fancyButton1535.fancyButton:hover,
+.fancyButton1535.fancyButton:focus,
+.fancyButton1535.fancyButton:active,
+.fancyButton1535.fancyButton.hover {
+}
+
+.fancyButton1535.fancyButton:link > span,
+.fancyButton1535.fancyButton:visited > span,
+.fancyButton1535div.fancyButton > span {
+}
+
+.fancyButton1535.fancyButton:hover > span,
+.fancyButton1535.fancyButton:focus > span,
+.fancyButton1535.fancyButton:active > span,
+.fancyButton1535.fancyButton.hover > span {
+}
+
+.fancyButton1535.fancyButton .text {
+  color: rgb(255, 255, 255);
+  font-size: .9em;
+  font-family: "Montserrat";
+  font-weight: 600;
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-position: left top;
+  height: 60px;
+  line-height: 1;
+}
+
+.fancyButton1535.fancyButton:hover .text,
+.fancyButton1535.fancyButton:focus .text,
+.fancyButton1535.fancyButton:active .text,
+.fancyButton1535.fancyButton.hover .text {
+  text-decoration: underline;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+.egovfooterbutton {
+  background-color: #5e6db2;
+  border: none;
+  color: white;
+  padding-top: 0.4em;
+  padding-bottom: 0.6em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 6px;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 0.95em;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+}
+
+#google_translate_element {
+  display: none !important;
+}
+</style></div></div>
+	</div>
+	</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div>
+</div>
+
+
+
+
+		<div id="banner2-362" style="display: none"></div>
+			<script type="text/javascript">
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderBanner('banner2-362',
+								'banner2',
+								{"BannerOptionID":362,"ThemeID":97,"SlotName":"banner2","Name":"Default","IsDefault":true,"BannerMode":1,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":false,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":791,"BannerOptionID":362,"FileName":"/ImageRepository/Document?documentID=38890","Height":130,"Width":128,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135578800000)\/","AltText":null}],"BannerVideos":[{"BannerVideoID":29,"BannerOptionID":362,"VideoFileName":"","ImageFileName":"EmptyBannerBkg202404260945386018.png","IsLink":false,"LinkAddress":null,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135578800000)\/","VideoFileID":"00000000-0000-0000-0000-000000000000","ImageFileID":"00000000-0000-0000-0000-000000000000","VideoWidth":0,"VideoHeight":0,"ImageWidth":0,"ImageHeight":0,"LinkedVideoUrl":"","RecordStatus":0,"AltText":null}],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135578800000)\/"},
+								{"BannerImageID":791,"BannerOptionID":362,"FileName":"/ImageRepository/Document?documentID=38890","Height":130,"Width":128,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135578800000)\/","AltText":null},
+								'/App_Themes/Interior/Images/',
+								'<img alt="" class="bannerObject" src="/ImageRepository/Document?documentID=38890" />');
+						});
+				});
+			</script>
+
+</div>
+</div>
+
+            </div>
+        </div>
+    </div>
+
+
+<link href="/745732998.css" rel="stylesheet" type="text/css">
+
+<div id="SplashMessageWrapper" class="cp-Splash-wrapper">
+	<div role="dialog" aria-labelledby="cp-Splash-title" aria-describedby="editorContentDesc" aria-modal="true" tabindex="-1" id="SplashMessage" class="hidden cp-Splash cp-Splash--modal is-open">
+		<div class="cp-Splash-header">
+			<h2 class="cp-Splash-title" id="cp-Splash-title">Loading</h2>
+			<button class="cp-Splash-Btn cp-Splash-close" aria-label="Close this modal" title="Close this window">
+				<svg id="iconClose" viewbox="0 0 25 25">
+					<polygon style="fill:currentcolor" points="18.806,6.98 18.075,6.248 12.532,11.792 6.989,6.248 6.257,6.98 11.786,12.508 6.212,18.084 6.943,18.815 12.532,13.224 18.12,18.815 18.851,18.084 13.277,12.508"></polygon>
+				</svg>
+			</button>
+		</div>
+		<div class="cp-Splash-body">
+			<div class="cp-Splash-Prose editorContent fr-view" id="editorContentDesc">
+				<!-- Content from the Froala Editor will go here. -->
+				Loading
+			</div>
+		</div>
+		<div class="cp-Splash-footer">
+			<button class="cp-Splash-Btn cp-Splash-Btn--NoShow">Do Not Show Again</button>
+			<button class="cp-Splash-Btn cp-Splash-Btn--Close">Close</button>
+		</div>
+	</div>
+</div>
+
+<script src="/Assets/Scripts/APIClient.js"></script>
+<script src="/Assets/Mystique/Shared/Scripts/Moment/Moment.min.js"></script>
+<script src="/Assets/Scripts/SplashModal/SplashModalRender.js"></script>
+<script>
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '',
+				targetType: 0
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+</script>
+
+	
+	
+
+    
+
+
+	<script type="text/javascript">function dynamicStretchContainers () {Core.Layout.stretchContainers('#siteSidebarTS');}</script>
+
+
+
+
+
+
+    <script src="/-978663714.js" type="text/javascript"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124287990-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-124287990-1');
+</script>
+<!-- End Google -->
+
+
+<!-- Monsido -->
+<script type="text/javascript">
+window._monsido = window._monsido || {
+token: "ymljWJ0QDovnCBHB_rKmzg",
+statistics: {
+enabled: true,
+cookieLessTracking: true,
+documentTracking: {
+enabled: true,
+documentCls: "monsido_download",
+documentIgnoreCls: "monsido_ignore_download",
+documentExt: [],
+},
+},
+heatmap: {
+enabled: true,
+},
+pageCorrect: {
+enabled: true,
+},
+};
+</script>
+<script type="text/javascript" async src=https://app-script.monsido.com/v2/monsido-script.js></script>
+<!-- End Monsido -->
+
+
+<!-- Fixed Nav Adjustment -->
+<script>
+  function getValueTS(elem, attr) {
+    const val = elem.css(attr);
+    if (val === undefined) return undefined;
+    const num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  const bgColorRegexTS = /rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)/;
+  function isTransparentTS(elem) {
+    const bg = elem.css('background-color');
+    if (typeof bg !== "string" || !bg.startsWith('rgba(')) return false;
+    const matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    const alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (let i = 0; i < containersTS.length; i++) {
+      const containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  const anchor = $("#divToolbars");
+
+  // Outer banner padding (push banner down)
+  const outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  const innerSizingTS = $("#bannerSizingTS");
+  const bodyContainerTS = $("#bodyContainerTS");
+
+  const forceUnfixClassTS = "forceUnfixTS";
+
+  const fixedTopTS = $(".fixedTopTS");
+  const fixedBottomTS = $(".fixedBottomTS");
+  const fixedLeftTS = $(".fixedLeftTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    const attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    const editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      const topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          const anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight() - 1);
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        const anchorHeight = anchor.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight);
+        const leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          const containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    const topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      const anchorBounding = anchor[0].getBoundingClientRect();
+      const attachBounding = topAttachTS[0].getBoundingClientRect();
+      const scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      resizeAdjustmentTS();
+    }, 350);
+
+    $(window).scroll(function () {
+      scrollAdjustmentTS();
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        resizeAdjustmentTS();
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      resizeAdjustmentTS();
+    });
+  });
+</script>
+<!-- End Fixed Nav Adjustment -->
+
+
+
+<!-- Move banner to outer wrap --> 
+<script> 
+function moveBannerToOuterWrap() { 
+    if ($(".fixedBannerTS").length) { 
+		if ($("#bannerDivbanner2").length) { 
+			$("#bannerDivbanner2").appendTo("#outer-wrap"); 
+		} else { 
+			setTimeout(function() { 
+				moveBannerToOuterWrap(); 
+			}, 500); 
+		} 
+	}
+} 
+moveBannerToOuterWrap(); 
+</script> 
+<!-- end move banner to outer wrap -->
+
+<!----------Google Translate (Mobile Friendly)--------->
+
+
+
+<style>#google-translate-container {float: right;padding: 3px 5px 0px 0px;}.goog-te-combo,.goog-te-banner *,.goog-te-ftab *,.goog-te-menu *,.goog-te-menu2 *,.goog-te-balloon * {font-family: arial;font-size: 10pt;background-image: url("https://theme.zdassets.com/theme_assets/958586/bae8aa24db8d43595871692a9d259186f2db3fb4.png");background-position: 3px 4px;background-size: 22px;background-repeat: no-repeat;text-indent: 20px;background-color: #fff;color: #000 !important;}.goog-logo-link {display: none !important;}.goog-te-gadget {color: transparent !important;}.goog-te-gadget .goog-te-combo {margin: 2px 0 !important;border-radius: 15px !important;}.goog-te-combo{border: 1px solid !important;border-color: #bcc9d7 #96a3b1 #96a3b1 #bcc9d7 !important;border-radius: 0 !important;height:32px; !important;padding: 0 1px 2 .25rem !important;}
+
+#launcher-wrapper {bottom: 250px !important;}
+
+</style>
+
+<div id="google-translate-container">
+
+<div id="google_translate_element" style="position: fixed; bottom: 150px; right: 20px; z-index: 5;"></div>
+
+</div>
+
+<script>
+
+function googleTranslateElementInit() {
+
+new google.translate.TranslateElement({ pageLanguage: "en" }, "google_translate_element");
+
+// begin accessibility compliance
+
+$('img.goog-te-gadget-icon').attr('alt','Google Translate');
+
+$('div#goog-gt-tt div.logo img').attr('alt','translate');
+
+$('div#goog-gt-tt .original-text').css('text-align','left');
+
+$('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+
+$('.goog-te-combo').attr('aria-label','google translate languages');
+
+$('svg.goog-te-spinner').attr('title','Google Translate Spinner');
+
+$('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+
+}
+
+$(function() {
+$.getScript("//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
+});
+</script>
+<!--------------End Google Translate----------------->
+
+
+    <script type="text/javascript">
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    </script>
+
+    <noscript>
+        <style>
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        </style>
+    </noscript>
+
+        
+<div style="display: none;">
+	<svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+
+		<symbol id="iconArrow--left" viewbox="0 0 25 25">
+			<title>Arrow Left</title>
+			<polygon style="fill:currentcolor" points="18.044,25 19.498,23.545 8.409,12.454 19.408,1.455 17.954,0 5.502,12.452"></polygon>
+		</symbol>
+
+		<symbol id="iconArrow--right" viewbox="0 0 25 25">
+			<title>Arrow Right</title>
+			<polygon style="fill:currentcolor" points="6.957,0 5.502,1.455 16.591,12.546 5.592,23.545 7.047,25 19.498,12.548"></polygon>
+		</symbol>
+
+	</svg>
+</div>
+    <script type="text/javascript">loadCSS('//fonts.googleapis.com/css?family=Inter:100,200,300,500,600,700,800,900,regular|Montserrat:500,500italic,600,600italic,700,700italic,800,800italic,900,900italic,italic,regular|Oswald:500,regular|Roboto+Mono:regular|');</script>
+    
+
+    <div class="hidden activeWidgetSkinComponentsOnPageJson">[]</div>
+        <div style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <symbol id="iconSlideshowArrowLeft" viewbox="0 0 22.68 40">
+                    <title>Slideshow Left Arrow</title>
+                    <g>
+                        <path style="fill:currentcolor;" d="M20,40a2.67,2.67,0,0,1-1.9-.79L.79,21.9a2.68,2.68,0,0,1,0-3.79L18.1.79a2.68,2.68,0,1,1,3.79,3.79L6.47,20,21.89,35.42A2.68,2.68,0,0,1,20,40Z"></path>
+                    </g>
+                </symbol>
+                <symbol id="iconSlideshowArrowRight" viewbox="0 0 22.68 40">
+                    <title>Slideshow Right Arrow</title>
+                    <g>
+                        <path style="fill:currentcolor;" d="M2.68,0a2.67,2.67,0,0,1,1.9.79L21.89,18.1a2.68,2.68,0,0,1,0,3.79L4.58,39.21A2.68,2.68,0,0,1,.79,35.42L16.21,20,.79,4.58A2.68,2.68,0,0,1,2.68,0Z"></path>
+                    </g>
+                </symbol>
+            </svg>
+        </div>
+    
+	
+
+    <div id="root-picker-outlet"></div>
+</body>
+</html>
+

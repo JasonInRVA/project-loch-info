@@ -13,9 +13,75 @@ MANIFEST_CSV = DOCS_DIR / "manifest.csv"
 
 USACE_NOTICE_URL = "https://www.nao.usace.army.mil/Media/Public-Notices/Article/4484789/nao-2026-00182-vmrc-project-loch-chesterfield-county-virginia-wauford-prm-site/"
 VMRC_DOCKET_URL = "https://webapps.mrc.virginia.gov/public/habitat/additionaldocs.php?id=20260171"
+CHESTERFIELD_CIVICCLERK_URL = "https://chesterfieldcova.portal.civicclerk.com/"
 
 
 MANUAL_METADATA = {
+    "docs/chesterfield/2025-06-25_Aeris_Investments_Fixed_Tax_Rate_Agreement.pdf": {
+        "date": "2025-06-25",
+        "title": "Aeris Investments Fixed Tax Rate Agreement",
+        "agency": "Chesterfield County Board of Supervisors",
+        "originator": "Chesterfield County and Aeris Investments LLC",
+        "description": "County agreement document for Project Loch, identified in the text as a proposed large-scale data center project on approximately 342 acres in Chesterfield County.",
+        "official_source_url": "https://chesterfieldcova.portal.civicclerk.com/event/1232/files/attachment/11740",
+        "status": "historical",
+        "record_type": "established fact",
+        "series": "County tax agreement record",
+        "series_order": 2,
+        "canonical_archived_path": "docs/chesterfield/2025-06-25_Aeris_Investments_Fixed_Tax_Rate_Agreement.pdf",
+    },
+    "docs/chesterfield/2025-06-25_Chesterfield_BOS_Agenda_Packet.pdf": {
+        "date": "2025-06-25",
+        "title": "Chesterfield Board of Supervisors Agenda Packet",
+        "agency": "Chesterfield County Board of Supervisors",
+        "originator": "Chesterfield County Board of Supervisors",
+        "description": "Agenda packet for the June 25, 2025 Board of Supervisors meeting, including the county item titled 'Approval of a Fixed Tax Rate Agreement with Project Loch (Aeris).'",
+        "official_source_url": "https://chesterfieldcova.portal.civicclerk.com/event/1232/files/agenda/3602",
+        "status": "historical",
+        "record_type": "established fact",
+        "series": "County board meeting record",
+        "series_order": 1,
+        "canonical_archived_path": "docs/chesterfield/2025-06-25_Chesterfield_BOS_Agenda_Packet.pdf",
+    },
+    "docs/chesterfield/2025-08-27_Chesterfield_BOS_Minutes_Project_Loch_Google_Identity.pdf": {
+        "date": "2025-08-27",
+        "title": "Chesterfield Board of Supervisors Minutes on Google Identity",
+        "agency": "Chesterfield County Board of Supervisors",
+        "originator": "Chesterfield County Board of Supervisors",
+        "description": "Board minutes recording the public statement that Project Peanut, Project Loch (Aeris), and Project Skye (Skyward) were Google projects.",
+        "official_source_url": "https://chesterfieldcova.portal.civicclerk.com/event/1234/files/agenda/3658",
+        "status": "historical",
+        "record_type": "established fact",
+        "series": "County board meeting record",
+        "series_order": 2,
+        "canonical_archived_path": "docs/chesterfield/2025-08-27_Chesterfield_BOS_Minutes_Project_Loch_Google_Identity.pdf",
+    },
+    "docs/chesterfield/2026-05-21_Chesterfield_EDA_Minutes_Google_Infrastructure_Grant.pdf": {
+        "date": "2026-05-21",
+        "title": "Chesterfield EDA Minutes on Google Infrastructure Grant",
+        "agency": "Chesterfield County Economic Development Authority",
+        "originator": "Chesterfield County Economic Development Authority",
+        "description": "EDA meeting minutes stating that a $25 million grant funded engineering and design of water, sewer, and roadway infrastructure serving the Google campus and an adjacent pad-ready development site.",
+        "official_source_url": "https://chesterfieldcova.portal.civicclerk.com/event/1919/files/agenda/4130",
+        "status": "historical",
+        "record_type": "established fact",
+        "series": "County infrastructure record",
+        "series_order": 1,
+        "canonical_archived_path": "docs/chesterfield/2026-05-21_Chesterfield_EDA_Minutes_Google_Infrastructure_Grant.pdf",
+    },
+    "docs/chesterfield/2026-05-27_Chesterfield_Presentation_Project_Loch_and_Skye_Google_Transactions.pdf": {
+        "date": "2026-05-27",
+        "title": "Chesterfield Presentation on Project Loch and Skye Google Transactions",
+        "agency": "Chesterfield County Board of Supervisors",
+        "originator": "Chesterfield County",
+        "description": "County presentation file whose text includes 'Project Loch & Skye Google Transactions' and 'Google Land Transactions.'",
+        "official_source_url": "https://chesterfieldcova.portal.civicclerk.com/event/2026/files/attachment/14942",
+        "status": "historical",
+        "record_type": "established fact",
+        "series": "County land transaction record",
+        "series_order": 1,
+        "canonical_archived_path": "docs/chesterfield/2026-05-27_Chesterfield_Presentation_Project_Loch_and_Skye_Google_Transactions.pdf",
+    },
     "docs/deq/2026-02-18_DEQ_Additional_Information_Request_1.pdf": {
         "date": "2026-02-18",
         "title": "DEQ Additional Information Request 1",
@@ -339,6 +405,8 @@ def build_records() -> list[dict]:
             "archived_path": relative_path,
             "official_source_parent": VMRC_DOCKET_URL
             if "webapps.mrc.virginia.gov" in metadata["official_source_url"]
+            else CHESTERFIELD_CIVICCLERK_URL
+            if "chesterfieldcova.portal.civicclerk.com" in metadata["official_source_url"]
             else metadata["official_source_url"],
             "page_count": page_count(pdf_path),
             "file_size_bytes": file_size(pdf_path),
