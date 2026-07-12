@@ -52,6 +52,32 @@
     "official_source_host": "chesterfieldcova.portal.civicclerk.com"
   },
   {
+    "date": "2025-06-25",
+    "title": "Chesterfield Board of Supervisors Minutes on Project Loch Approval",
+    "agency": "Chesterfield County Board of Supervisors",
+    "originator": "Chesterfield County Board of Supervisors",
+    "description": "Board minutes recording formal approval of the fixed tax rate agreement with Project Loch (Aeris), including the statement that the agreement matched the one approved for Project Skye.",
+    "official_source_url": "https://chesterfieldcova.portal.civicclerk.com/event/1232/files/agenda/3618",
+    "status": "historical",
+    "record_type": "established fact",
+    "series": "County board meeting record",
+    "series_order": 3,
+    "summary_path": "summaries/chesterfield-bos-minutes-project-loch-approval.html",
+    "canonical_archived_path": "docs/chesterfield/2025-06-25_Chesterfield_BOS_Minutes_Project_Loch_Approval.pdf",
+    "year": "2025",
+    "archived_path": "docs/chesterfield/2025-06-25_Chesterfield_BOS_Minutes_Project_Loch_Approval.pdf",
+    "official_source_parent": "https://chesterfieldcova.portal.civicclerk.com/",
+    "page_count": 73,
+    "file_size_bytes": 418161,
+    "sha256": "0775b177a00afcbfdab93e9a9ec8c1ce2fe716bd57f1f76297674c0675517bdc",
+    "duplicate_count": 1,
+    "duplicate_paths": [
+      "docs/chesterfield/2025-06-25_Chesterfield_BOS_Minutes_Project_Loch_Approval.pdf"
+    ],
+    "is_duplicate": false,
+    "official_source_host": "chesterfieldcova.portal.civicclerk.com"
+  },
+  {
     "date": "2025-08-27",
     "title": "Chesterfield Board of Supervisors Minutes on Google Identity",
     "agency": "Chesterfield County Board of Supervisors",
@@ -295,6 +321,32 @@
     "official_source_host": "webapps.mrc.virginia.gov"
   },
   {
+    "date": "2026-03-19",
+    "title": "Chesterfield EDA Minutes on Bermuda Hundred and Upper Magnolia Updates",
+    "agency": "Chesterfield County Economic Development Authority",
+    "originator": "Chesterfield County Economic Development Authority",
+    "description": "EDA meeting minutes stating that Google's Bermuda Hundred data center site was actively undergoing grading and that the first building was anticipated to be operational in the fourth quarter of 2027, while also outlining permit and infrastructure progress at Upper Magnolia Green.",
+    "official_source_url": "https://chesterfieldcova.portal.civicclerk.com/event/1917/files/agenda/4000",
+    "status": "historical",
+    "record_type": "established fact",
+    "series": "County project status record",
+    "series_order": 1,
+    "summary_path": "summaries/chesterfield-eda-minutes-march-2026.html",
+    "canonical_archived_path": "docs/chesterfield/2026-03-19_Chesterfield_EDA_Minutes_Bermuda_Hundred_and_Upper_Magnolia_Update.pdf",
+    "year": "2026",
+    "archived_path": "docs/chesterfield/2026-03-19_Chesterfield_EDA_Minutes_Bermuda_Hundred_and_Upper_Magnolia_Update.pdf",
+    "official_source_parent": "https://chesterfieldcova.portal.civicclerk.com/",
+    "page_count": 4,
+    "file_size_bytes": 238515,
+    "sha256": "b00adef2bb51a8fb487ca85a2ce7d222cbea8511ddc32fe5b33844fe3479c176",
+    "duplicate_count": 1,
+    "duplicate_paths": [
+      "docs/chesterfield/2026-03-19_Chesterfield_EDA_Minutes_Bermuda_Hundred_and_Upper_Magnolia_Update.pdf"
+    ],
+    "is_duplicate": false,
+    "official_source_host": "chesterfieldcova.portal.civicclerk.com"
+  },
+  {
     "date": "2026-03-31",
     "title": "DEQ Additional Information Request 2",
     "agency": "Virginia DEQ",
@@ -347,6 +399,32 @@
     ],
     "is_duplicate": true,
     "official_source_host": "webapps.mrc.virginia.gov"
+  },
+  {
+    "date": "2026-04-16",
+    "title": "Chesterfield EDA Minutes on Upper Magnolia Update",
+    "agency": "Chesterfield County Economic Development Authority",
+    "originator": "Chesterfield County Economic Development Authority",
+    "description": "EDA meeting minutes reporting continued infrastructure progress at Upper Magnolia Green and a planned community update meeting, while noting no change in Meadowville project-status reporting from the prior month.",
+    "official_source_url": "https://chesterfieldcova.portal.civicclerk.com/event/1918/files/agenda/4095",
+    "status": "historical",
+    "record_type": "established fact",
+    "series": "County project status record",
+    "series_order": 2,
+    "summary_path": "summaries/chesterfield-eda-minutes-april-2026.html",
+    "canonical_archived_path": "docs/chesterfield/2026-04-16_Chesterfield_EDA_Minutes_Upper_Magnolia_Update.pdf",
+    "year": "2026",
+    "archived_path": "docs/chesterfield/2026-04-16_Chesterfield_EDA_Minutes_Upper_Magnolia_Update.pdf",
+    "official_source_parent": "https://chesterfieldcova.portal.civicclerk.com/",
+    "page_count": 3,
+    "file_size_bytes": 158402,
+    "sha256": "3fce4f4a7bfe4894b85b2db9259eefba262a2fbba7d3929592870f6b1d03f09c",
+    "duplicate_count": 1,
+    "duplicate_paths": [
+      "docs/chesterfield/2026-04-16_Chesterfield_EDA_Minutes_Upper_Magnolia_Update.pdf"
+    ],
+    "is_duplicate": false,
+    "official_source_host": "chesterfieldcova.portal.civicclerk.com"
   },
   {
     "date": "2026-04-29",
