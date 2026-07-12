@@ -42,6 +42,9 @@ function renderRecord(record) {
   const officialNote = record.official_source_note
     ? `<p class="meta-note"><strong>Official source note:</strong> ${escapeHtml(record.official_source_note)}</p>`
     : "";
+  const summaryLink = record.summary_path
+    ? `<a href="${escapeHtml(record.summary_path)}">One-page summary</a>`
+    : "";
 
   return `
     <article class="record-card">
@@ -72,6 +75,7 @@ function renderRecord(record) {
         </div>
       </div>
       <div class="record-links">
+        ${summaryLink}
         <span class="source-pair">
           <a href="${escapeHtml(record.archived_path)}">Archived copy</a>
           <span>(</span>

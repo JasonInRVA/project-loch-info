@@ -5,7 +5,7 @@ from urllib.parse import urlparse
 
 
 ROOT = Path(__file__).resolve().parent.parent
-HTML_FILES = [ROOT / "index.html", ROOT / "library.html"]
+HTML_FILES = [ROOT / "index.html", ROOT / "library.html", *sorted((ROOT / "summaries").glob("*.html"))]
 MANIFEST_PATH = ROOT / "docs" / "manifest.json"
 
 

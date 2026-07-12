@@ -28,6 +28,7 @@ MANUAL_METADATA = {
         "record_type": "established fact",
         "series": "County tax agreement record",
         "series_order": 2,
+        "summary_path": "summaries/aeris-tax-agreement.html",
         "canonical_archived_path": "docs/chesterfield/2025-06-25_Aeris_Investments_Fixed_Tax_Rate_Agreement.pdf",
     },
     "docs/chesterfield/2025-06-25_Chesterfield_BOS_Agenda_Packet.pdf": {
@@ -54,6 +55,7 @@ MANUAL_METADATA = {
         "record_type": "established fact",
         "series": "County board meeting record",
         "series_order": 2,
+        "summary_path": "summaries/bos-minutes-google-identity.html",
         "canonical_archived_path": "docs/chesterfield/2025-08-27_Chesterfield_BOS_Minutes_Project_Loch_Google_Identity.pdf",
     },
     "docs/chesterfield/2026-05-21_Chesterfield_EDA_Minutes_Google_Infrastructure_Grant.pdf": {
@@ -93,6 +95,7 @@ MANUAL_METADATA = {
         "record_type": "agency comment",
         "series": "DEQ additional information requests",
         "series_order": 1,
+        "summary_path": "summaries/deq-additional-info-request-1.html",
         "canonical_archived_path": "docs/deq/2026-02-18_DEQ_Additional_Information_Request_1.pdf",
     },
     "docs/deq/2026-03-31_DEQ_Additional_Information_Request_2.pdf": {
@@ -119,6 +122,7 @@ MANUAL_METADATA = {
         "record_type": "agency comment",
         "series": "DEQ additional information requests",
         "series_order": 4,
+        "summary_path": "summaries/deq-additional-info-request-4.html",
         "canonical_archived_path": "docs/deq/2026-06-18_DEQ_Additional_Information_Request_4.pdf",
     },
     "docs/deq/2026-07-08_DEQ_Request_to_Confirm_Wauford_SSWD_Withdrawal.pdf": {
@@ -132,6 +136,7 @@ MANUAL_METADATA = {
         "record_type": "agency comment",
         "series": "Wauford mitigation withdrawal correspondence",
         "series_order": 1,
+        "summary_path": "summaries/deq-request-confirm-withdrawal.html",
         "canonical_archived_path": "docs/deq/2026-07-08_DEQ_Request_to_Confirm_Wauford_SSWD_Withdrawal.pdf",
     },
     "docs/google/2026-01-29_Project_Loch_DoD_SAFE_Transmittal_and_Supporting_Files.pdf": {
@@ -159,6 +164,7 @@ MANUAL_METADATA = {
         "record_type": "applicant assertion",
         "series": "Initial application package",
         "series_order": 3,
+        "summary_path": "summaries/environmental-report.html",
         "canonical_archived_path": "docs/google/2026-01-29_Project_Loch_Environmental_Report_and_Technical_Appendices.pdf",
     },
     "docs/google/2026-01-29_Project_Loch_Joint_Permit_Application_Package.pdf": {
@@ -172,6 +178,7 @@ MANUAL_METADATA = {
         "record_type": "applicant assertion",
         "series": "Initial application package",
         "series_order": 2,
+        "summary_path": "summaries/joint-permit-application.html",
         "canonical_archived_path": "docs/google/2026-01-29_Project_Loch_Joint_Permit_Application_Package.pdf",
     },
     "docs/google/2026-07-02_Google_Response_to_DEQ_Additional_Information_Request_4.pdf": {
@@ -185,6 +192,7 @@ MANUAL_METADATA = {
         "record_type": "applicant assertion",
         "series": "Responses to DEQ request 4",
         "series_order": 1,
+        "summary_path": "summaries/google-response-request-4.html",
         "canonical_archived_path": "docs/google/2026-07-02_Google_Response_to_DEQ_Additional_Information_Request_4.pdf",
     },
     "docs/google/2026-07-08_Google_Confirmation_of_Wauford_SSWD_Withdrawal.pdf": {
@@ -198,6 +206,7 @@ MANUAL_METADATA = {
         "record_type": "applicant assertion",
         "series": "Wauford mitigation withdrawal correspondence",
         "series_order": 2,
+        "summary_path": "summaries/google-confirmation-withdrawal.html",
         "canonical_archived_path": "docs/google/2026-07-08_Google_Confirmation_of_Wauford_SSWD_Withdrawal.pdf",
     },
     "docs/usace/2026-05-13_USACE_NAO-2026-00182_Attachments.pdf": {
@@ -225,6 +234,7 @@ MANUAL_METADATA = {
         "record_type": "established fact",
         "series": "VMRC jurisdiction determination",
         "series_order": 1,
+        "summary_path": "summaries/vmrc-non-jurisdiction-letter.html",
         "canonical_archived_path": "docs/vmrc/2026-04-29_VMRC_Non-Jurisdiction_Letter.pdf",
     },
     "docs/vmrc/VMRC_JPA-26-0171_Document_267375.pdf": {
@@ -453,6 +463,7 @@ def write_csv(records: list[dict]) -> None:
         "official_source_parent",
         "official_source_note",
         "official_source_host",
+        "summary_path",
         "page_count",
         "file_size_bytes",
         "sha256",

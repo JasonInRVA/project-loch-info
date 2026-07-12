@@ -187,6 +187,7 @@ h3 {
 .record-card,
 .change-card,
 .placeholder-card,
+.summary-card,
 .timeline-card,
 .lens-card,
 .library-shell,
@@ -202,6 +203,7 @@ h3 {
 .card,
 .change-card,
 .placeholder-card,
+.summary-card,
 .timeline-card,
 .lens-card,
 .callout,
@@ -225,6 +227,7 @@ h3 {
 .card p:last-child,
 .change-card p:last-child,
 .placeholder-card p:last-child,
+.summary-card p:last-child,
 .timeline-card p:last-child,
 .lens-card p:last-child,
 .summary-box p:last-child {
@@ -233,6 +236,27 @@ h3 {
 
 .download-list a {
   text-decoration: none;
+}
+
+.summary-card h3,
+.summary-prose h3 {
+  margin-top: 0;
+}
+
+.summary-card .record-flags {
+  margin-bottom: 12px;
+}
+
+.summary-prose {
+  display: grid;
+  gap: 18px;
+}
+
+.summary-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
 }
 
 .timeline {
