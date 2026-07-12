@@ -1,30 +1,41 @@
-# Project Loch Information
+# Project Loch Public Archive
 
-Public information and primary-source documents concerning Google’s proposed Project Loch data center campus in Chesterfield County, Virginia.
+Durable, neutral public archive for public records concerning Google's proposed Project Loch data center campus in Chesterfield County, Virginia.
 
-This repository is designed as a neutral reference resource. It summarizes the proposal, links to official records, highlights changes in the permitting record, and provides questions residents may wish to ask Google and public agencies.
+## Purpose
 
-## Publish with GitHub Pages
+This repository is preservation-first.
 
-1. Open **Settings** in this repository.
-2. Select **Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select the **main** branch and **/(root)** folder, then save.
+- Every archived public document is stored locally in the repository.
+- Older records are retained even when later materials appear to supersede or revise them.
+- Each catalog entry links to the archived repository copy and an official source.
+- SHA-256 hashes are published for archived PDFs.
+- The site distinguishes applicant assertions, agency comments, established facts, and unresolved questions.
 
-The public site should then appear at:
-
-**https://jasoninrva.github.io/project-loch-info/**
-
-## Primary sources
+## Official source pages
 
 - U.S. Army Corps of Engineers public notice: https://www.nao.usace.army.mil/Media/Public-Notices/Article/4484789/nao-2026-00182-vmrc-project-loch-chesterfield-county-virginia-wauford-prm-site/
-- VMRC JPA 26-0171 document docket: https://webapps.mrc.virginia.gov/public/habitat/additionaldocs.php?id=20260171
-- Project document archive: https://www.dropbox.com/scl/fo/z9kuebl3h3xe3cytwi3re/ANpd0kCVFQVhIY3H-MUuEs0?rlkey=xnwjrasv1gh911qg44d8gjf3s&st=5p6lh7su&dl=0
+- VMRC JPA 26-0171 docket: https://webapps.mrc.virginia.gov/public/habitat/additionaldocs.php?id=20260171
 
-## Editorial approach
+## Generated archive files
 
-- Prefer primary sources.
-- Distinguish applicant claims from agency findings.
-- Date all significant updates.
-- Correct factual errors when supported by documentary evidence.
-- Avoid framing the site as either promotional or oppositional.
+- `docs/manifest.json`
+- `docs/manifest.csv`
+
+Both are derived from the actual PDF files under `docs/`, not from prior crawler state.
+
+## Local rebuild
+
+```bash
+python3 scripts/build_manifest.py
+python3 scripts/validate_site.py
+python3 -m http.server 8000
+```
+
+Then open `http://127.0.0.1:8000/`.
+
+## GitHub Pages
+
+The published site is expected at:
+
+`https://jasoninrva.github.io/project-loch-info/`
