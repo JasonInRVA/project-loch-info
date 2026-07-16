@@ -1,5 +1,31 @@
 [
   {
+    "date": "2024-12-09",
+    "title": "Virginia JLARC Data Center Study",
+    "agency": "Virginia JLARC",
+    "originator": "Joint Legislative Audit and Review Commission",
+    "description": "Virginia JLARC report on data center growth, electric-grid impacts, energy policy, and ratepayer effects, preserved here from the project microsite reference copy.",
+    "official_source_url": "https://media.chesterfieldvadatacenter.com/JLARC%20Virginia%20Data%20Center%20Study_FINAL_12-09-2024.pdf",
+    "status": "historical",
+    "record_type": "established fact",
+    "series": "Referenced background reports",
+    "series_order": 1,
+    "canonical_archived_path": "docs/google/2024-12-09_Virginia_JLARC_Data_Center_Study.pdf",
+    "summary_path": "summaries/virginia-jlarc-data-center-study.html",
+    "year": "2024",
+    "archived_path": "docs/google/2024-12-09_Virginia_JLARC_Data_Center_Study.pdf",
+    "official_source_parent": "https://media.chesterfieldvadatacenter.com/JLARC%20Virginia%20Data%20Center%20Study_FINAL_12-09-2024.pdf",
+    "page_count": 150,
+    "file_size_bytes": 3523331,
+    "sha256": "230eaa7b38bd5ca78f749d2aff01849778a043c649ba3a1fabdafb30fda9db5a",
+    "duplicate_count": 1,
+    "duplicate_paths": [
+      "docs/google/2024-12-09_Virginia_JLARC_Data_Center_Study.pdf"
+    ],
+    "is_duplicate": false,
+    "official_source_host": "media.chesterfieldvadatacenter.com"
+  },
+  {
     "date": "2025-06-25",
     "title": "Aeris Investments Fixed Tax Rate Agreement",
     "agency": "Chesterfield County Board of Supervisors",
@@ -175,14 +201,13 @@
     "archived_path": "docs/google/2026-01-29_Project_Loch_Joint_Permit_Application_Package.pdf",
     "official_source_parent": "https://webapps.mrc.virginia.gov/public/habitat/additionaldocs.php?id=20260171",
     "page_count": 366,
-    "file_size_bytes": 29260281,
-    "sha256": "24426d93dea0fd5eb342137f12aa64486f5a27c29a153c5fc6cc3a7162c31d7e",
-    "duplicate_count": 2,
+    "file_size_bytes": 29291578,
+    "sha256": "826339972f1a1c3877199ca26521ca56dfd0b084364677bcbb988d44682643f0",
+    "duplicate_count": 1,
     "duplicate_paths": [
-      "docs/google/2026-01-29_Project_Loch_Joint_Permit_Application_Package.pdf",
-      "docs/vmrc/VMRC_JPA-26-0171_Document_267376.pdf"
+      "docs/google/2026-01-29_Project_Loch_Joint_Permit_Application_Package.pdf"
     ],
-    "is_duplicate": true,
+    "is_duplicate": false,
     "official_source_host": "webapps.mrc.virginia.gov"
   },
   {
@@ -231,12 +256,11 @@
     "page_count": 366,
     "file_size_bytes": 29260281,
     "sha256": "24426d93dea0fd5eb342137f12aa64486f5a27c29a153c5fc6cc3a7162c31d7e",
-    "duplicate_count": 2,
+    "duplicate_count": 1,
     "duplicate_paths": [
-      "docs/google/2026-01-29_Project_Loch_Joint_Permit_Application_Package.pdf",
       "docs/vmrc/VMRC_JPA-26-0171_Document_267376.pdf"
     ],
-    "is_duplicate": true,
+    "is_duplicate": false,
     "official_source_host": "webapps.mrc.virginia.gov"
   },
   {
@@ -774,5 +798,161 @@
     ],
     "is_duplicate": true,
     "official_source_host": "webapps.mrc.virginia.gov"
+  },
+  {
+    "date": "2026-07-16",
+    "title": "Google Water Stewardship Report (2025 edition)",
+    "agency": "Google",
+    "originator": "Google",
+    "description": "Google water stewardship report linked from the Chesterfield data center project microsite; preserved as a project-referenced source.",
+    "official_source_url": "https://media.chesterfieldvadatacenter.com/2025-google-water-stewardship-report.pdf",
+    "status": "historical",
+    "record_type": "applicant assertion",
+    "series": "Referenced background reports",
+    "series_order": 2,
+    "canonical_archived_path": "docs/google/2026-07-16_Google_Water_Stewardship_Report_2025.pdf",
+    "summary_path": "summaries/google-water-stewardship-2025.html",
+    "year": "2026",
+    "archived_path": "docs/google/2026-07-16_Google_Water_Stewardship_Report_2025.pdf",
+    "official_source_parent": "https://media.chesterfieldvadatacenter.com/2025-google-water-stewardship-report.pdf",
+    "page_count": 42,
+    "file_size_bytes": 11077037,
+    "sha256": "edd99dbdf7b0958e13d8228c7ef4c647dcd6c9a1e61300c6297736ac2c27e2ee",
+    "duplicate_count": 1,
+    "duplicate_paths": [
+      "docs/google/2026-07-16_Google_Water_Stewardship_Report_2025.pdf"
+    ],
+    "is_duplicate": false,
+    "official_source_host": "media.chesterfieldvadatacenter.com"
+  },
+  {
+    "date": "2026-07-16",
+    "title": "Google Water Stewardship Report (2026 edition)",
+    "agency": "Google",
+    "originator": "Google",
+    "description": "Google water stewardship report linked from the Chesterfield data center project microsite; preserved as a project-referenced source.",
+    "official_source_url": "https://media.chesterfieldvadatacenter.com/2026-google-water-stewardship-report.pdf",
+    "status": "current",
+    "record_type": "applicant assertion",
+    "series": "Referenced background reports",
+    "series_order": 3,
+    "canonical_archived_path": "docs/google/2026-07-16_Google_Water_Stewardship_Report_2026.pdf",
+    "summary_path": "summaries/google-water-stewardship-2026.html",
+    "year": "2026",
+    "archived_path": "docs/google/2026-07-16_Google_Water_Stewardship_Report_2026.pdf",
+    "official_source_parent": "https://media.chesterfieldvadatacenter.com/2026-google-water-stewardship-report.pdf",
+    "page_count": 57,
+    "file_size_bytes": 6870973,
+    "sha256": "3a21e4df85fcd58d934788072da9005ce35657e1d7bf968ba608efa1b182ac5f",
+    "duplicate_count": 1,
+    "duplicate_paths": [
+      "docs/google/2026-07-16_Google_Water_Stewardship_Report_2026.pdf"
+    ],
+    "is_duplicate": false,
+    "official_source_host": "media.chesterfieldvadatacenter.com"
+  },
+  {
+    "date": "2026-07-16",
+    "title": "Project Loch Contextual Site Plan",
+    "agency": "Google",
+    "originator": "Google",
+    "description": "Project Loch contextual plan PDF linked from the Chesterfield data center microsite.",
+    "official_source_url": "https://media.chesterfieldvadatacenter.com/project-loch-contextual.pdf",
+    "status": "current",
+    "record_type": "applicant assertion",
+    "series": "Google Chesterfield microsite project plans",
+    "series_order": 2,
+    "canonical_archived_path": "docs/google/2026-07-16_Project_Loch_Contextual_Site_Plan.pdf",
+    "summary_path": "summaries/project-loch-contextual-site-plan.html",
+    "year": "2026",
+    "archived_path": "docs/google/2026-07-16_Project_Loch_Contextual_Site_Plan.pdf",
+    "official_source_parent": "https://media.chesterfieldvadatacenter.com/project-loch-contextual.pdf",
+    "page_count": 1,
+    "file_size_bytes": 2255591,
+    "sha256": "b7180bd87dccf8347559f37c14dede042f04e6ce9364061a273478a3c5a980e2",
+    "duplicate_count": 1,
+    "duplicate_paths": [
+      "docs/google/2026-07-16_Project_Loch_Contextual_Site_Plan.pdf"
+    ],
+    "is_duplicate": false,
+    "official_source_host": "media.chesterfieldvadatacenter.com"
+  },
+  {
+    "date": "2026-07-16",
+    "title": "Project Loch Overall Site Plan",
+    "agency": "Google",
+    "originator": "Google",
+    "description": "Project Loch overall site plan PDF linked from the Chesterfield data center microsite.",
+    "official_source_url": "https://media.chesterfieldvadatacenter.com/project-loch-overall.pdf",
+    "status": "current",
+    "record_type": "applicant assertion",
+    "series": "Google Chesterfield microsite project plans",
+    "series_order": 1,
+    "canonical_archived_path": "docs/google/2026-07-16_Project_Loch_Overall_Site_Plan.pdf",
+    "summary_path": "summaries/project-loch-overall-site-plan.html",
+    "year": "2026",
+    "archived_path": "docs/google/2026-07-16_Project_Loch_Overall_Site_Plan.pdf",
+    "official_source_parent": "https://media.chesterfieldvadatacenter.com/project-loch-overall.pdf",
+    "page_count": 1,
+    "file_size_bytes": 2094565,
+    "sha256": "aa17a5ddf6b16ef4bb0d8b0013fb6f2c57b0e0d2e9cd857ada252f5895575fbf",
+    "duplicate_count": 1,
+    "duplicate_paths": [
+      "docs/google/2026-07-16_Project_Loch_Overall_Site_Plan.pdf"
+    ],
+    "is_duplicate": false,
+    "official_source_host": "media.chesterfieldvadatacenter.com"
+  },
+  {
+    "date": "2026-07-16",
+    "title": "Project Skye Contextual Site Plan",
+    "agency": "Google",
+    "originator": "Google",
+    "description": "Project Skye contextual site plan PDF linked from the Chesterfield data center microsite.",
+    "official_source_url": "https://media.chesterfieldvadatacenter.com/project-skye-overall-contextual.pdf",
+    "status": "current",
+    "record_type": "applicant assertion",
+    "series": "Google Chesterfield microsite project plans",
+    "series_order": 4,
+    "canonical_archived_path": "docs/google/2026-07-16_Project_Skye_Contextual_Site_Plan.pdf",
+    "summary_path": "summaries/project-skye-contextual-site-plan.html",
+    "year": "2026",
+    "archived_path": "docs/google/2026-07-16_Project_Skye_Contextual_Site_Plan.pdf",
+    "official_source_parent": "https://media.chesterfieldvadatacenter.com/project-skye-overall-contextual.pdf",
+    "page_count": 1,
+    "file_size_bytes": 4056102,
+    "sha256": "9bba3c8415f8a978caaea472993eba2e41669c679571dd67c763f3c992a55a40",
+    "duplicate_count": 1,
+    "duplicate_paths": [
+      "docs/google/2026-07-16_Project_Skye_Contextual_Site_Plan.pdf"
+    ],
+    "is_duplicate": false,
+    "official_source_host": "media.chesterfieldvadatacenter.com"
+  },
+  {
+    "date": "2026-07-16",
+    "title": "Project Skye Overall Site Plan",
+    "agency": "Google",
+    "originator": "Google",
+    "description": "Project Skye overall site plan PDF linked from the Chesterfield data center microsite.",
+    "official_source_url": "https://media.chesterfieldvadatacenter.com/project-skye-overall.pdf",
+    "status": "current",
+    "record_type": "applicant assertion",
+    "series": "Google Chesterfield microsite project plans",
+    "series_order": 3,
+    "canonical_archived_path": "docs/google/2026-07-16_Project_Skye_Overall_Site_Plan.pdf",
+    "summary_path": "summaries/project-skye-overall-site-plan.html",
+    "year": "2026",
+    "archived_path": "docs/google/2026-07-16_Project_Skye_Overall_Site_Plan.pdf",
+    "official_source_parent": "https://media.chesterfieldvadatacenter.com/project-skye-overall.pdf",
+    "page_count": 1,
+    "file_size_bytes": 3214012,
+    "sha256": "c7f4fc8d1bcdb0071b4c2257234544650c71c39b707a3486e3019166828db077",
+    "duplicate_count": 1,
+    "duplicate_paths": [
+      "docs/google/2026-07-16_Project_Skye_Overall_Site_Plan.pdf"
+    ],
+    "is_duplicate": false,
+    "official_source_host": "media.chesterfieldvadatacenter.com"
   }
 ]
