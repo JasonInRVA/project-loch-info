@@ -12,6 +12,15 @@ This repository is preservation-first.
 - SHA-256 hashes are published for archived PDFs.
 - The site distinguishes applicant assertions, agency comments, established facts, and unresolved questions.
 
+## Scope boundary
+
+This archive tracks **Project Loch** first.
+
+- Loch records are in-scope by default.
+- Records for Project Skye, Project Peanut, or other data center projects are added only when they contain clear Loch-crossover evidence.
+- Loch-crossover evidence means one or more of the following: (1) shared infrastructure dependencies, (2) regulatory interpretations likely reused for Loch, or (3) material contradictions, clarifications, or gaps in the Loch record.
+- Parallel records that do not add Loch-specific signal are normally treated as out-of-scope for this repository stage.
+
 ## Official source pages
 
 - U.S. Army Corps of Engineers public notice: https://www.nao.usace.army.mil/Media/Public-Notices/Article/4484789/nao-2026-00182-vmrc-project-loch-chesterfield-county-virginia-wauford-prm-site/
